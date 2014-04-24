@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="launch_mode_entries">
+        <item>@string/pref_launch_mode_normally</item>
+        <item>@string/pref_launch_mode_pa_halo</item>
+        <item>@string/pref_launch_mode_xhfw</item>
+        <item>@string/pref_launch_mode_xmw</item>
+    </string-array>
+    <string-array name="launch_mode_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    
+    <string-array name="sidebar_position_entries">
+        <item>@string/left</item>
+        <item>@string/right</item>
+    </string-array>
+    <string-array name="sidebar_position_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+</resources>

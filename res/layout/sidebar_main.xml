@@ -1,0 +1,112 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@android:id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:id="@android:id/background"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@android:id/button1"
+            android:background="@drawable/bg_left" >
+
+            <ScrollView
+                android:id="@+id/scroll_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/settings_menu_holder"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true" >
+
+                <LinearLayout
+                    android:id="@+id/scroll_view_holder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="8dp" >
+                </LinearLayout>
+            </ScrollView>
+
+            <LinearLayout
+                android:id="@+id/settings_menu_holder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/more_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_marginBottom="4dp"
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_more" />
+
+                <LinearLayout
+                    android:id="@+id/ll_settings_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/iv_create_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="16dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:paddingBottom="4dp"
+                        android:paddingTop="4dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_menu_create_group" />
+
+                    <ImageView
+                        android:id="@+id/iv_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="16dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:paddingBottom="4dp"
+                        android:paddingTop="4dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_menu_edit" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@android:id/button1"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:cropToPadding="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/tab_right_show_selector" />
+
+        <ImageView
+            android:id="@android:id/button2"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@android:id/background"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@android:id/background"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/tab_left_show_selector" />
+    </RelativeLayout>
+
+</LinearLayout>

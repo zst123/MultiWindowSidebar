@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp" >
+
+        <TextView
+            android:id="@+id/extra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="@string/create_group_from_service"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/holo_orange_light"
+            android:textSize="14sp"
+            android:textStyle="italic|bold" />
+
+        <Button
+            android:id="@+id/btn_choose0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/create_group_first"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tV_pkg0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="@android:string/unknownName"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold|italic" />
+
+        <Button
+            android:id="@+id/btn_choose1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/create_group_second"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tV_pkg1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="@android:string/unknownName"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/create_group_warning"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="12sp"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/btn_create"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="36dp"
+            android:text="@string/create_group"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+</ScrollView>

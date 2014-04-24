@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Main -->
+    <string name="app_name">MultiWindowSidebar</string>
+    
+    <!-- Generic Strings -->
+    <string name="left">Left</string>
+    <string name="right">Right</string>
+    <string name="add_app">Add App</string>
+    <string name="group">Group</string>
+    <string name="settings_default">Default Value</string>
+    
+    <!-- Creating Group -->
+    <string name="create_group">Create Group</string>
+    <string name="create_group_done">The group has been created</string>
+    <string name="create_group_empty1">The 1st application cannot be left blank.</string>
+    <string name="create_group_empty2">The 2nd application cannot be left blank.</string>
+    <string name="create_group_warning">Note: Groups will only work correctly with XHaloFloatingWindow or XMultiWindow app launch modes.</string>
+    <string name="create_group_from_service">The applications have been auto detected. Please confirm before saving.</string>
+    <string name="create_group_first">Choose the first app\n(opens at top or left)</string>
+    <string name="create_group_second">Choose the second app\n(opens at bottom or right)</string>
+    
+    <!-- Preference / Main -->
+    <string name="pref_main_header">Main</string>
+    <string name="pref_toggle_service_title">Toggle Service</string>
+    <string name="pref_toggle_service_summary">Show or hide the sidebar</string>
+    <string name="pref_start_on_boot_title">Start on Boot</string>
+    <string name="pref_start_on_boot_summary">Automatically show the sidebar after booting the device</string>
+    
+    <string name="pref_launch_mode_title">App Launch Mode</string>
+    <string name="pref_launch_mode_summary">Choose a mode to launch the selected apps in</string>
+    <string name="pref_launch_mode_normally">Default (Normal Launch)</string>
+    <string name="pref_launch_mode_pa_halo">ParanoidAndroid Halo</string>
+    <string name="pref_launch_mode_xhfw">XHaloFloatingWindow</string>
+    <string name="pref_launch_mode_xmw">XMultiWindow</string>
+    <string name="pref_launch_mode_error_xhfw">XHaloFloatingWindow does not appear to be installed.\nThis launch mode will not work without it.</string>
+    <string name="pref_launch_mode_error_xmw">XMultiWindow does not appear to be installed.\nThis launch mode will not work without it.</string>
+    
+    <string name="pref_select_app_title">Select Apps</string>
+    <string name="pref_select_app_summary">Choose the apps to appear in the sidebar</string>
+    
+    <!-- Preference / Appearence -->
+    <string name="pref_appearance_header">Appearance</string>
+    <string name="pref_sidebar_position_title">Sidebar Position</string>
+    <string name="pref_sidebar_position_summary">Select the side of the screen to show the sidebar</string>
+    <string name="pref_tab_size_title">Tab Size</string>
+    <string name="pref_tab_size_summary">Size of the sidebar tab in dp</string>
+    <string name="pref_label_size_title">Label Size</string>
+    <string name="pref_label_size_summary">Size of app name labels in sp</string>
+    <string name="pref_animation_time_title">Animation Speed</string>
+    <string name="pref_animation_time_summary">Speed of the sidebar slide animation</string>
+    
+    <!-- Service -->
+    <string name="app_list_empty">There is no apps in the list.\nPlease select some apps in the settings.</string>
+    <string name="app_launch_error">There was a problem launching the app:\n</string>
+    
+</resources>

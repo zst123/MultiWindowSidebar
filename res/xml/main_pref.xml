@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- Main -->
+    <PreferenceCategory android:title="@string/pref_main_header" >
+        <Preference
+            android:key="toggle_service"
+            android:summary="@string/pref_toggle_service_summary"
+            android:title="@string/pref_toggle_service_title" />
+
+        <CheckBoxPreference
+            android:key="start_on_boot"
+            android:summary="@string/pref_start_on_boot_summary"
+            android:title="@string/pref_start_on_boot_title" />
+
+        <ListPreference
+            android:entries="@array/launch_mode_entries"
+            android:entryValues="@array/launch_mode_values"
+            android:key="launch_mode"
+            android:summary="@string/pref_launch_mode_summary"
+            android:title="@string/pref_launch_mode_title" />
+
+        <Preference
+            android:key="select_apps"
+            android:summary="@string/pref_select_app_summary"
+            android:title="@string/pref_select_app_title" />
+    </PreferenceCategory>
+
+    <!-- Appearance -->
+    <PreferenceCategory android:title="@string/pref_appearance_header" >
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/sidebar_position_entries"
+            android:entryValues="@array/sidebar_position_values"
+            android:key="sidebar_position"
+            android:summary="@string/pref_sidebar_position_summary"
+            android:title="@string/pref_sidebar_position_title" />
+
+        <com.zst.app.multiwindowsidebar.preference.SeekBarDialog
+            defaultValue="32"
+            maximum="96"
+            minimum="12"
+            suffix="dp"
+            android:dialogTitle="@string/pref_tab_size_title"
+            android:key="tab_size"
+            android:summary="@string/pref_tab_size_summary"
+            android:title="@string/pref_tab_size_title" />
+        
+        <com.zst.app.multiwindowsidebar.preference.TextSizeDialog
+            defaultValue="14"
+            maximum="30"
+            minimum="0"
+            suffix="sp"
+            android:dialogTitle="@string/pref_label_size_title"
+            android:key="label_size"
+            android:summary="@string/pref_label_size_summary"
+            android:title="@string/pref_label_size_title" />
+        
+        <com.zst.app.multiwindowsidebar.preference.SeekBarDialog
+            defaultValue="300"
+            maximum="1000"
+            minimum="0"
+            suffix="ms"
+            android:dialogTitle="@string/pref_animation_time_title"
+            android:key="animation_time"
+            android:summary="@string/pref_animation_time_summary"
+            android:title="@string/pref_animation_time_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
