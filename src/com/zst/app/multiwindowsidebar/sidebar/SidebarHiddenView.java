@@ -14,8 +14,8 @@ import android.widget.LinearLayout;
 
 @SuppressLint("ViewConstructor")
 public class SidebarHiddenView extends LinearLayout {
-	SidebarService mService;
-	ImageView mTab;
+	final SidebarService mService;
+	final ImageView mTab;
 	
 	public SidebarHiddenView(SidebarService service) {
 		super(service);

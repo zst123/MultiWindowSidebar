@@ -35,10 +35,10 @@ public class SidebarHolderView extends LinearLayout {
 	private final LayoutInflater mInflator;
 	
 	/* View Management */
-	private RelativeLayout mContentView;
-	private LinearLayout mHolderView;
-	private RelativeLayout mBarView;
-	private ImageView mTabView;
+	private final RelativeLayout mContentView;
+	private final LinearLayout mHolderView;
+	private final RelativeLayout mBarView;
+	private final ImageView mTabView;
 	private SidebarItemView[] mItemViews;
 	
 	

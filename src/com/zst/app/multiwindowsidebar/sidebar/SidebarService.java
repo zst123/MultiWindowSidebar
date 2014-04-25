@@ -18,7 +18,6 @@ import android.view.WindowManager;
 public class SidebarService extends Service {
 	// Thanks: https://github.com/EatHeat/FloatingExample
 
-	public static final String KEY_END = "key_end";
 	public static boolean isRunning;
 
 	public WindowManager mWindowManager;
@@ -29,8 +28,8 @@ public class SidebarService extends Service {
 	public int mAnimationTime;
 	public int mLabelSize;
 
-	public SidebarHolderView mShownSidebar;
-	public SidebarHiddenView mHiddenSidebar;
+	private SidebarHolderView mShownSidebar;
+	private SidebarHiddenView mHiddenSidebar;
 	
 	@Override 
 	public void onCreate() {
@@ -57,7 +56,6 @@ public class SidebarService extends Service {
 	private void refreshSettings() {
 		SharedPreferences app_prefs = getSharedPreferences(Common.KEY_PREFERENCE_APPS, Context.MODE_PRIVATE);
 		SharedPreferences main_prefs = getSharedPreferences(Common.KEY_PREFERENCE_MAIN, Context.MODE_PRIVATE);
-		//app_prefs.edit().putInt("com.android.mms&com.android.settings" , 6).commit();
 		
 		final int tab_size = main_prefs.getInt(Common.PREF_KEY_TAB_SIZE,
 				Common.PREF_DEF_TAB_SIZE);

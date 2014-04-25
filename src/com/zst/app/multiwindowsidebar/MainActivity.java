@@ -4,7 +4,6 @@ import com.zst.app.multiwindowsidebar.adapter.AppListActivity;
 import com.zst.app.multiwindowsidebar.sidebar.SidebarService;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
@@ -14,14 +13,10 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 
 public class MainActivity extends Activity {
-	
-	static Handler mHandler;
-	
+		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		mHandler = new Handler();
-		
+		super.onCreate(savedInstanceState);		
 		// Display the fragment as the main content.
 		FragmentTransaction transaction = getFragmentManager().beginTransaction();
 		MainPreference fragment = new MainPreference();
