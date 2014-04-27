@@ -49,7 +49,7 @@ public class MainActivity extends Activity {
 				return true;
 			} else if (k.equals(Common.PREF_KEY_TOGGLE_SERVICE)) {
 				if (SidebarService.isRunning) {
-					getActivity().stopService(new Intent(getActivity(), SidebarService.class));
+					SidebarService.stopSidebar(getActivity());
 				} else {
 					getActivity().startService(new Intent(getActivity(), SidebarService.class));
 				}

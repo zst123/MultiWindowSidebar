@@ -44,7 +44,7 @@ public class Util {
 	}
 	
 	public static void refreshService(final Context ctx) {
-		if (SidebarService.isRunning) {
+		if (SidebarService.isRunning || SidebarService.isSidebarShown) {
 			final Intent service = new Intent(ctx, SidebarService.class);
 			service.putExtra(Common.EXTRA_REFRESH_SERVICE, true);
 			ctx.startService(service);
@@ -53,8 +53,7 @@ public class Util {
 	
 	public static void resetService(final Context ctx) {
 		if (!SidebarService.isRunning) return;
-		final Intent service = new Intent(ctx, SidebarService.class);
-		ctx.stopService(service);
+		final Intent service = SidebarService.stopSidebar(ctx);
 		
 		new Handler(ctx.getMainLooper()).postDelayed(new Runnable() {
 			@Override

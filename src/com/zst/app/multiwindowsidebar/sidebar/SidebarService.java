@@ -19,6 +19,8 @@ public class SidebarService extends Service {
 	// Thanks: https://github.com/EatHeat/FloatingExample
 
 	public static boolean isRunning;
+	public static boolean isStoppable;
+	public static boolean isSidebarShown;
 
 	public WindowManager mWindowManager;
 	public Handler mHandler;
@@ -28,28 +30,33 @@ public class SidebarService extends Service {
 	public int mAnimationTime;
 	public int mLabelSize;
 
-	private SidebarHolderView mShownSidebar;
-	private SidebarHiddenView mHiddenSidebar;
+	private static SidebarHolderView mShownSidebar;
+	private static SidebarHiddenView mHiddenSidebar;
 	
 	@Override 
 	public void onCreate() {
 		super.onCreate();
 		isRunning = true;
+		isStoppable = false;
 		
 		mWindowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
 		mHandler = new Handler();
 		
-		// Non-refreshable settings
-		SharedPreferences main_prefs = getSharedPreferences(Common.KEY_PREFERENCE_MAIN, Context.MODE_PRIVATE);
-		mBarOnRight = Integer.parseInt(main_prefs.getString(Common.PREF_KEY_SIDEBAR_POSITION,
-				Common.PREF_DEF_SIDEBAR_POSITION)) == 1;
-		
-		mHiddenSidebar = new SidebarHiddenView(this);
-		mShownSidebar = new SidebarHolderView(this);
-		
-		refreshSettings();
-		
-		hideBar();
+		if (!isSidebarShown && mHiddenSidebar == null && mShownSidebar == null) {
+			// Non-refreshable settings
+			SharedPreferences main_prefs = getSharedPreferences(Common.KEY_PREFERENCE_MAIN,
+					Context.MODE_PRIVATE);
+			mBarOnRight = Integer.parseInt(main_prefs.getString(Common.PREF_KEY_SIDEBAR_POSITION,
+					Common.PREF_DEF_SIDEBAR_POSITION)) == 1;
+			
+			mHiddenSidebar = new SidebarHiddenView(this);
+			mShownSidebar = new SidebarHolderView(this);
+			isSidebarShown = true;
+			
+			refreshSettings();
+			
+			hideBar();
+		}
 	}
 	
 	// All the refreshable settings go here
@@ -95,16 +102,32 @@ public class SidebarService extends Service {
 		super.onDestroy();
 		isRunning = false;
 		
-		mHiddenSidebar.animateView(false);
-		mShownSidebar.animateView(false);
-		new Handler().postDelayed(new Runnable () {
-			@Override
-			public void run() {
-				safelyRemoveView(mHiddenSidebar);
-				safelyRemoveView(mShownSidebar);
-			}
-		}, 500);
-		
+		if (isStoppable) {
+			isSidebarShown = false;
+			isStoppable = false;
+			mHiddenSidebar.animateView(false);
+			mShownSidebar.animateView(false);
+			new Handler().postDelayed(new Runnable () {
+				@Override
+				public void run() {
+					safelyRemoveView(mHiddenSidebar);
+					safelyRemoveView(mShownSidebar);
+					mHiddenSidebar = null;
+					mShownSidebar = null;
+				}
+			}, 500);
+		} else {
+			Intent i = new Intent(Common.PKG_THIS + ".START");
+			sendBroadcast(i);
+			// try to restart silently as we are killed by the system
+		}
+	}
+	
+	public static Intent stopSidebar(Context ctx) {
+		isStoppable = true;
+		Intent i = new Intent(ctx, SidebarService.class);
+		ctx.stopService(i);
+		return i;
 	}
 	
 	public void safelyRemoveView(View v) {
