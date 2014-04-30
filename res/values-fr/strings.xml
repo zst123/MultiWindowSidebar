@@ -6,23 +6,23 @@
     <!-- Generic Strings -->
     <string name="left">Gauche</string>
     <string name="right">Droite</string>
-    <string name="add_app">Ajouter app</string>
+    <string name="add_app">Ajouter applis</string>
     <string name="group">Groupe</string>
     <string name="settings_default">Valeur par défaut</string>
     
     <!-- Creating Group -->
-    <string name="create_group">Créer le groupe</string>
-    <string name="create_group_done">Le groupe a été créé</string>
-    <string name="create_group_empty1">La 1ère application ne peut pas être laissée vide.</string>
-    <string name="create_group_empty2">La 2ème application ne peut pas être laissée vide.</string>
+    <string name="create_group">Créer un groupe</string>
+    <string name="create_group_done">Groupe créé</string>
+    <string name="create_group_empty1">Impossible de laisser vide la 1ère application</string>
+    <string name="create_group_empty2">Impossible de laisser vide la 2ème application</string>
     <string name="create_group_warning">Note: Les groupes ne fonctionneront correctement qu\'avec les modes de lancement XHaloFloatingWindow ou XMultiWindow.</string>
-    <string name="create_group_from_service">Des applications ont été détectées automatiquement. Veuillez confirmer avant de sauvegarder.</string>
-    <string name="create_group_first">Choisir la première app\n(s\'ouvre en haut ou à gauche)</string>
-    <string name="create_group_second">Choisir la deuxième app\n(s\'ouvre en bas ou à droite)</string>
+    <string name="create_group_from_service">Détection automatique des applications. Veuillez confirmer avant de sauvegarder.</string>
+    <string name="create_group_first">Choisir la première appli\n(s\'ouvre en haut ou à gauche)</string>
+    <string name="create_group_second">Choisir la deuxième appli\n(s\'ouvre en bas ou à droite)</string>
     
     <!-- Preference / Main -->
     <string name="pref_main_header">Général</string>
-    <string name="pref_toggle_service_title">Toggle d\'activation</string>
+    <string name="pref_toggle_service_title">Toggle marche/arrêt</string>
     <string name="pref_toggle_service_summary">Afficher ou masquer la barre latérale</string>
     <string name="pref_start_on_boot_title">Lancer au démarrage</string>
     <string name="pref_start_on_boot_summary">Afficher automatiquement la barre latérale après le démarrage de l\'appareil</string>
@@ -36,7 +36,7 @@
     <string name="pref_launch_mode_error_xhfw">XHaloFloatingWindow n\'est pas installé.\nCe mode de lancement ne fonctionnera pas sans cela.</string>
     <string name="pref_launch_mode_error_xmw">XMultiWindow n\'est pas installé.\nCe mode de lancement ne fonctionnera pas sans cela.</string>
     
-    <string name="pref_select_app_title">Sélectionner les applications</string>
+    <string name="pref_select_app_title">Sélection des applications</string>
     <string name="pref_select_app_summary">Choisir les applications à afficher dans la barre latérale</string>
     
     <!-- Preference / Appearence -->
@@ -51,7 +51,7 @@
     <string name="pref_animation_time_summary">Vitesse d\'ouverture de la barre latérale</string>
     
     <!-- Service -->
-    <string name="app_list_empty">Il n\'y a aucune application dans la liste.\nVeuillez faire votre sélection dans les paramètres.</string>
-    <string name="app_launch_error">Il y a eu un problème lors du lancement de l\'application:\n</string>
+    <string name="app_list_empty">Il n\'y a aucune application dans la barre latérale.\nVeuillez faire votre sélection dans les paramètres.</string>
+    <string name="app_launch_error">Un problème lors du lancement de l\'application a eu lieu:\n</string>
     
 </resources>
