@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Main -->
+    <string name="app_name">MultiWindowSidebar</string>
+    
+    <!-- Generic Strings -->
+    <string name="left">Esquerda</string>
+    <string name="right">Direita</string>
+    <string name="add_app">Adicionar</string>
+    <string name="group">Grupo</string>
+    <string name="settings_default">Padrão</string>
+    
+    <!-- Creating Group -->
+    <string name="create_group">Criar Grupo</string>
+    <string name="create_group_done">O grupo foi criado</string>
+    <string name="create_group_empty1">A primeira aplicação não pode ficar em branco.</string>
+    <string name="create_group_empty2">A segunda aplicação não pode ficar em branco.</string>
+    <string name="create_group_warning">Nota: Grupos funcionarão corretamente apenas com XHaloFloatingWindow ou XMultiWindow.</string>
+    <string name="create_group_from_service">Os aplicativos foram detectados automaticamente. Por favor, confirme antes de salver.</string>
+    <string name="create_group_first">Escolha o primeiro aplicativo\n(abre no alto ou na esquerda)</string>
+    <string name="create_group_second">Escolha o segundo aplicativo\n(abre embaixo ou na direita)</string>
+    
+    <!-- Preference / Main -->
+    <string name="pref_main_header">Principal</string>
+    <string name="pref_toggle_service_title">Alterar estado</string>
+    <string name="pref_toggle_service_summary"> Habilitar ou desabilitar a barra lateral</string>
+    <string name="pref_start_on_boot_title">Habilitar no boot</string>
+    <string name="pref_start_on_boot_summary">Mostrar a barra lateral automaticamente após a inicialização do aparelho</string>
+    
+    <string name="pref_launch_mode_title">Modo de inicio dos aplicativos</string>
+    <string name="pref_launch_mode_summary">Escolha como os aplicativos selecionados serão iniciados</string>
+    <string name="pref_launch_mode_normally">Padrão (Início normal)</string>
+    <string name="pref_launch_mode_pa_halo">ParanoidAndroid Halo</string>
+    <string name="pref_launch_mode_xhfw">XHaloFloatingWindow</string>
+    <string name="pref_launch_mode_xmw">XMultiWindow</string>
+    <string name="pref_launch_mode_error_xhfw">Aparentemente o XHaloFloatingWindow não está instalado.\nEste modo não funcionará.</string>
+    <string name="pref_launch_mode_error_xmw">Aparentemente o XMultiWindow não está instalado.\nEste modo não funcionará.</string>
+    
+    <string name="pref_select_app_title">Selecionar os aplicativos</string>
+    <string name="pref_select_app_summary">Escolha os aplicativos que irão aparecer na barra lateral</string>
+    
+    <!-- Preference / Appearence -->
+    <string name="pref_appearance_header">Aparência</string>
+    <string name="pref_sidebar_position_title">Posição da barra lateral</string>
+    <string name="pref_sidebar_position_summary">Escolha a posição em que a barra irá aparecer</string>
+    <string name="pref_tab_size_title">Largura da Barra</string>
+    <string name="pref_tab_size_summary">Largura da barra lateral, em dp</string>
+    <string name="pref_label_size_title">Tamanho dos títulos</string>
+    <string name="pref_label_size_summary">Tamanho da fonte dos títulos dos aplicativos, em sp</string>
+    <string name="pref_animation_time_title">Velocidade da animação</string>
+    <string name="pref_animation_time_summary">Velocidade de animação da barra lateral</string>
+    
+    <!-- Service -->
+    <string name="app_list_empty">A lista está vazia.\nPor favor, selecione os aplicativos nas configurações.</string>
+    <string name="app_launch_error">Houve um problema ao iniciar o aplicativo:\n</string>
+    
+</resources>
