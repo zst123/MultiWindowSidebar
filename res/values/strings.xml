@@ -51,7 +51,7 @@
     <string name="pref_animation_time_summary">Speed of the sidebar slide animation</string>
     
     <!-- Service -->
-    <string name="app_list_empty">There is no apps in the list.\nPlease select some apps in the settings.</string>
+    <string name="app_list_empty">There are no apps in the list.\nPlease select some apps in the settings.</string>
     <string name="app_launch_error">There was a problem launching the app:\n</string>
     
 </resources>

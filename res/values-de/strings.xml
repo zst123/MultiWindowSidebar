@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Main -->
+    <string name="app_name">MultiWindowSidebar</string>
+    
+    <!-- Generic Strings -->
+    <string name="left">Links</string>
+    <string name="right">Rechts</string>
+    <string name="add_app">App hinzufügen</string>
+    <string name="group">Gruppe</string>
+    <string name="settings_default">Standardwert</string>
+    
+    <!-- Creating Group -->
+    <string name="create_group">Gruppe erstellen</string>
+    <string name="create_group_done">Gruppe wurde erstellt</string>
+    <string name="create_group_empty1">Die erste App kann nicht leer gelassen werden.</string>
+    <string name="create_group_empty2">Die zweite App kann nicht leer gelassen werden.</string>
+    <string name="create_group_warning">Bemerkung: Gruppen funktionieren nur korrekt mit den XHaloFloatingWindow oder XMultiWindow App Startmodi.</string>
+    <string name="create_group_from_service">Diese Anwendungen wurden erkannt. Bitte überprüfe sie nochmal vor dem Speichern.</string>
+    <string name="create_group_first">Wähle die erste App\n(öffnet sich oben oder links)</string>
+    <string name="create_group_second">Wähle die zweite App\n(öffnet sich unten oder rechts)</string>
+    
+    <!-- Preference / Main -->
+    <string name="pref_main_header">Allgemein</string>
+    <string name="pref_toggle_service_title">Schalte Service um</string>
+    <string name="pref_toggle_service_summary">Zeige oder verstecke die Seitenleiste</string>
+    <string name="pref_start_on_boot_title">Beim Boot setzen</string>
+    <string name="pref_start_on_boot_summary">Zeige Seitenleiste automatisch nach Systemstart</string>
+    
+    <string name="pref_launch_mode_title">App Startmodus</string>
+    <string name="pref_launch_mode_summary">Wähle einen Modus wie die Apps gestartet werden sollen</string>
+    <string name="pref_launch_mode_normally">Standard (Normaler Start)</string>
+    <string name="pref_launch_mode_pa_halo">ParanoidAndroid Halo</string>
+    <string name="pref_launch_mode_xhfw">XHaloFloatingWindow</string>
+    <string name="pref_launch_mode_xmw">XMultiWindow</string>
+    <string name="pref_launch_mode_error_xhfw">XHaloFloatingWindow ist nicht installiert.\nDieser Startmodus funktioniert nicht ohne diese App.</string>
+    <string name="pref_launch_mode_error_xmw">XMultiWindow ist nicht installiert.\nDieser Startmodus funktioniert nicht ohne diese App.</string>
+    
+    <string name="pref_select_app_title">Apps auswählen</string>
+    <string name="pref_select_app_summary">Wähle Apps welche in der Seitenleiste erscheinen sollen</string>
+    
+    <!-- Preference / Appearence -->
+    <string name="pref_appearance_header">Erscheinungsbild</string>
+    <string name="pref_sidebar_position_title">Seitenleistenposition</string>
+    <string name="pref_sidebar_position_summary">Bildschirmseite auf der sich die Seitenleiste befinden soll</string>
+    <string name="pref_tab_size_title">Tab-Größe</string>
+    <string name="pref_tab_size_summary">Breite der Seitenleiste in dp</string>
+    <string name="pref_label_size_title">Label-Größe</string>
+    <string name="pref_label_size_summary">Größe der App-Beschriftungen in sp</string>
+    <string name="pref_animation_time_title">Animationsgeschwindigkeit</string>
+    <string name="pref_animation_time_summary">Geschwindigkeit der Seitenleistenanimation</string>
+    
+    <!-- Service -->
+    <string name="app_list_empty">Es befinden sich keine Apps in der Liste.\nBitte wähle ein paar Apps in den Einstellungen.</string>
+    <string name="app_launch_error">Es gab Probleme diese App zu starten:\n</string>
+    
+</resources>
