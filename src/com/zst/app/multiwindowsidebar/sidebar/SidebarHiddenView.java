@@ -24,9 +24,9 @@ public class SidebarHiddenView extends LinearLayout {
 		mTab = (ImageView) findViewById(android.R.id.button1);
 		
 		if (mService.mBarOnRight) {
-			mTab.setImageResource(R.drawable.tab_right_hidden_selector);
+			mTab.setImageResource(ThemeSetting.getDrawableResId(ThemeSetting.TAB_RIGHT_HIDDEN));
 		} else {
-			mTab.setImageResource(R.drawable.tab_left_hidden_selector);
+			mTab.setImageResource(ThemeSetting.getDrawableResId(ThemeSetting.TAB_LEFT_HIDDEN));
 		}
 	}
 	

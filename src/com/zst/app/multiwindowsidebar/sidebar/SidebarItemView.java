@@ -125,7 +125,7 @@ public abstract class SidebarItemView extends LinearLayout {
 		if (!yes) {
 			mIcon.setImageDrawable(mDrawableIcon);
 		} else {
-			mIcon.setImageResource(R.drawable.ic_empty_icon);
+			mIcon.setImageResource(ThemeSetting.getDrawableResId(ThemeSetting.IC_EMPTY_ICON));
 		}
 	}
 	
