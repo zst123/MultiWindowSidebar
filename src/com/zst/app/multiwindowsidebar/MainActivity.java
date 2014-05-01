@@ -36,6 +36,7 @@ public class MainActivity extends Activity {
 			findPreference(Common.PREF_KEY_SELECT_APPS).setOnPreferenceClickListener(this);
 			findPreference(Common.PREF_KEY_LAUNCH_MODE).setOnPreferenceChangeListener(this);
 			findPreference(Common.PREF_KEY_SIDEBAR_POSITION).setOnPreferenceChangeListener(this);
+			findPreference(Common.PREF_KEY_SIDEBAR_THEME).setOnPreferenceChangeListener(this);
 			findPreference(Common.PREF_KEY_TAB_SIZE).setOnPreferenceChangeListener(this);
 			findPreference(Common.PREF_KEY_LABEL_SIZE).setOnPreferenceChangeListener(this);
 			findPreference(Common.PREF_KEY_ANIM_TIME).setOnPreferenceChangeListener(this);
@@ -84,6 +85,7 @@ public class MainActivity extends Activity {
 					|| k.equals(Common.PREF_KEY_LABEL_SIZE)) {
 				Util.refreshService(getActivity());
 			} else if (k.equals(Common.PREF_KEY_SIDEBAR_POSITION) ||
+					k.equals(Common.PREF_KEY_SIDEBAR_THEME) ||
 					k.equals(Common.PREF_KEY_ANIM_TIME)) {
 				Util.resetService(getActivity());
 			}

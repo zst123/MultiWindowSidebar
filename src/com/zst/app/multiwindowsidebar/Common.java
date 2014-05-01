@@ -37,6 +37,8 @@ public class Common {
 	public static final int PREF_DEF_LABEL_SIZE = 14;
 	public static final String PREF_KEY_ANIM_TIME = "animation_time";
 	public static final int PREF_DEF_ANIM_TIME = 300;
+	public static final String PREF_KEY_SIDEBAR_THEME = "sidebar_theme";
+	public static final String PREF_DEF_SIDEBAR_THEME = "0";
 
 	// App List
 	public static final String SEPARATOR_GROUP = "&";

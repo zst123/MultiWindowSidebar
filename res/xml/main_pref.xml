@@ -35,6 +35,14 @@
             android:key="sidebar_position"
             android:summary="@string/pref_sidebar_position_summary"
             android:title="@string/pref_sidebar_position_title" />
+        
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/sidebar_theme_entries"
+            android:entryValues="@array/sidebar_theme_values"
+            android:key="sidebar_theme"
+            android:summary="@string/pref_sidebar_theme_summary"
+            android:title="@string/pref_sidebar_theme_title" />
 
         <com.zst.app.multiwindowsidebar.preference.SeekBarDialog
             defaultValue="32"

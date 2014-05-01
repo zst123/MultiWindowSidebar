@@ -43,6 +43,8 @@
     <string name="pref_appearance_header">Appearance</string>
     <string name="pref_sidebar_position_title">Sidebar Position</string>
     <string name="pref_sidebar_position_summary">Select the side of the screen to show the sidebar</string>
+    <string name="pref_sidebar_theme_title">Sidebar Theme</string>
+    <string name="pref_sidebar_theme_summary">Select the visual appearance of the sidebar</string>
     <string name="pref_tab_size_title">Tab Size</string>
     <string name="pref_tab_size_summary">Size of the sidebar tab in dp</string>
     <string name="pref_label_size_title">Label Size</string>
@@ -54,4 +56,7 @@
     <string name="app_list_empty">There are no apps in the list.\nPlease select some apps in the settings.</string>
     <string name="app_launch_error">There was a problem launching the app:\n</string>
     
+    <!-- Themes -->
+    <string name="theme_default">Default (Original Note 3)\nby Samsung</string>
+    <string name="theme_inverted">Inverted Note 3\nby foreverloco@XDA</string>
 </resources>

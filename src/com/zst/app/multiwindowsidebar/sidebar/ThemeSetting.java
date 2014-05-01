@@ -56,7 +56,7 @@ public class ThemeSetting {
 	public static final int THEME_INVERTED = 2;
 	
 	/* Static */
-	public static int sTheme = THEME_INVERTED;
+	private static int sTheme = THEME_UNKNOWN;
 	
 	public static void setTheme(int theme) {
 		sTheme = theme;

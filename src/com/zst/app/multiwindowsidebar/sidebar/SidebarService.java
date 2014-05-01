@@ -48,6 +48,8 @@ public class SidebarService extends Service {
 					Context.MODE_PRIVATE);
 			mBarOnRight = Integer.parseInt(main_prefs.getString(Common.PREF_KEY_SIDEBAR_POSITION,
 					Common.PREF_DEF_SIDEBAR_POSITION)) == 1;
+			ThemeSetting.setTheme(Integer.parseInt(main_prefs.getString(
+					Common.PREF_KEY_SIDEBAR_THEME, Common.PREF_DEF_SIDEBAR_THEME)));
 			
 			mHiddenSidebar = new SidebarHiddenView(this);
 			mShownSidebar = new SidebarHolderView(this);

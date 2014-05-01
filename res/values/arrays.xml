@@ -22,5 +22,14 @@
         <item>0</item>
         <item>1</item>
     </string-array>
+    
+    <string-array name="sidebar_theme_entries">
+        <item>@string/theme_default</item>
+        <item>@string/theme_inverted</item>
+    </string-array>
+    <string-array name="sidebar_theme_values">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 
 </resources>
