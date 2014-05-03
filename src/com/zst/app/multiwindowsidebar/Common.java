@@ -25,6 +25,8 @@ public class Common {
 	// Preference keys & default values
 	public static final String PREF_KEY_TOGGLE_SERVICE = "toggle_service";
 	public static final String PREF_KEY_SELECT_APPS = "select_apps";
+	public static final String PREF_KEY_KEEP_IN_BG = "keep_app_bg";
+	public static final boolean PREF_DEF_KEEP_IN_BG = true;
 	public static final String PREF_KEY_START_ON_BOOT = "start_on_boot";
 	public static final boolean PREF_DEF_START_ON_BOOT = false;
 	public static final String PREF_KEY_SIDEBAR_POSITION = "sidebar_position";

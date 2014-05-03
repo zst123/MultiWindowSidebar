@@ -9,6 +9,12 @@
             android:title="@string/pref_toggle_service_title" />
 
         <CheckBoxPreference
+            android:key="keep_app_bg"
+            android:defaultValue="true"
+            android:summary="@string/pref_keep_app_bg_summary"
+            android:title="@string/pref_keep_app_bg_title" />
+        
+        <CheckBoxPreference
             android:key="start_on_boot"
             android:summary="@string/pref_start_on_boot_summary"
             android:title="@string/pref_start_on_boot_title" />

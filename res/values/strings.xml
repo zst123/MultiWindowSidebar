@@ -2,6 +2,7 @@
 <resources>
     <!-- Main -->
     <string name="app_name">MultiWindowSidebar</string>
+    <string name="app_name_running">MultiWindowSidebar is running</string>
     
     <!-- Generic Strings -->
     <string name="left">Left</string>
@@ -26,6 +27,8 @@
     <string name="pref_toggle_service_summary">Show or hide the sidebar</string>
     <string name="pref_start_on_boot_title">Start on Boot</string>
     <string name="pref_start_on_boot_summary">Automatically show the sidebar after booting the device</string>
+    <string name="pref_keep_app_bg_title">Keep Service in Background</string>
+    <string name="pref_keep_app_bg_summary">Prevent the system from killing the sidebar in very low memory situations by showing a notification</string>
     
     <string name="pref_launch_mode_title">App Launch Mode</string>
     <string name="pref_launch_mode_summary">Choose a mode to launch the selected apps in</string>

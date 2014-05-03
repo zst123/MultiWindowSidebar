@@ -2,12 +2,17 @@ package com.zst.app.multiwindowsidebar.sidebar;
 
 import com.zst.app.multiwindowsidebar.Common;
 import com.zst.app.multiwindowsidebar.IntentUtil;
+import com.zst.app.multiwindowsidebar.MainActivity;
+import com.zst.app.multiwindowsidebar.R;
 
+import android.app.Notification;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.PixelFormat;
+import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.view.Gravity;
@@ -62,6 +67,7 @@ public class SidebarService extends Service {
 	}
 	
 	// All the refreshable settings go here
+	@SuppressWarnings("deprecation")
 	private void refreshSettings() {
 		SharedPreferences app_prefs = getSharedPreferences(Common.KEY_PREFERENCE_APPS, Context.MODE_PRIVATE);
 		SharedPreferences main_prefs = getSharedPreferences(Common.KEY_PREFERENCE_MAIN, Context.MODE_PRIVATE);
@@ -82,6 +88,26 @@ public class SidebarService extends Service {
 		final int label_size = main_prefs.getInt(Common.PREF_KEY_LABEL_SIZE,
 				Common.PREF_DEF_LABEL_SIZE);
 		mLabelSize = label_size;
+		
+		// Add the foreground notification
+		if (main_prefs.getBoolean(Common.PREF_KEY_KEEP_IN_BG, Common.PREF_DEF_KEEP_IN_BG)) {
+			PendingIntent intent = PendingIntent.getActivity(this, 0,
+					new Intent(this, MainActivity.class), 0);
+			Notification.Builder n  = new Notification.Builder(this)
+	        .setContentTitle(getResources().getText(R.string.app_name_running))
+	        .setSmallIcon(R.drawable.transparent)
+	        .setContentIntent(intent);
+			
+			if (Build.VERSION.SDK_INT >= 16) {
+				n.setPriority(Notification.PRIORITY_MIN);
+				startForeground(99999, n.build());
+			} else {
+				startForeground(99999, n.getNotification());
+			}
+			
+		} else {
+			stopForeground(true);
+		}
 		
 		mShownSidebar.addApps(app_prefs, getPackageManager());
 	}

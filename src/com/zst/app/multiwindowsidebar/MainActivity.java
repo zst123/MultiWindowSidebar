@@ -34,6 +34,7 @@ public class MainActivity extends Activity {
 			addPreferencesFromResource(R.xml.main_pref);
 			findPreference(Common.PREF_KEY_TOGGLE_SERVICE).setOnPreferenceClickListener(this);
 			findPreference(Common.PREF_KEY_SELECT_APPS).setOnPreferenceClickListener(this);
+			findPreference(Common.PREF_KEY_KEEP_IN_BG).setOnPreferenceChangeListener(this);
 			findPreference(Common.PREF_KEY_LAUNCH_MODE).setOnPreferenceChangeListener(this);
 			findPreference(Common.PREF_KEY_SIDEBAR_POSITION).setOnPreferenceChangeListener(this);
 			findPreference(Common.PREF_KEY_SIDEBAR_THEME).setOnPreferenceChangeListener(this);
@@ -82,6 +83,7 @@ public class MainActivity extends Activity {
 					}
 				}
 			} else if (k.equals(Common.PREF_KEY_TAB_SIZE)
+					|| k.equals(Common.PREF_KEY_KEEP_IN_BG)
 					|| k.equals(Common.PREF_KEY_LABEL_SIZE)) {
 				Util.refreshService(getActivity());
 			} else if (k.equals(Common.PREF_KEY_SIDEBAR_POSITION) ||
