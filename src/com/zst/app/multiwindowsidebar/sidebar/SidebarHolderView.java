@@ -17,7 +17,6 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.LayerDrawable;
 import android.view.LayoutInflater;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
@@ -157,9 +156,7 @@ public class SidebarHolderView extends LinearLayout {
 							// TODO cleanup
 							final Drawable icon0 = info0.loadIcon(pm).mutate();
 							final Drawable icon1 = info1.loadIcon(pm).mutate();
-							icon0.setAlpha((int) (0.7f * 255));
-							icon1.setAlpha((int) (0.7f * 255));
-							item.setIcon(new LayerDrawable(new Drawable[] { icon0, icon1 }));
+							item.setIcon(Util.layerTwoIcons(mService, icon0, icon1));
 							
 							item.setLabel(info0.loadLabel(pm) +" & "+ info1.loadLabel(pm));
 							item.setPkg(str[0], str[1]);

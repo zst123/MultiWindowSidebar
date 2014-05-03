@@ -6,12 +6,12 @@ import java.util.Map;
 
 import com.zst.app.multiwindowsidebar.Common;
 import com.zst.app.multiwindowsidebar.R;
+import com.zst.app.multiwindowsidebar.Util;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.LayerDrawable;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -59,10 +59,8 @@ public abstract class AppListAdapter extends BaseAdapter {
 								
 								final Drawable icon0 = ai0.loadIcon(mPackageManager).mutate();
 								final Drawable icon1 = ai1.loadIcon(mPackageManager).mutate();
-								icon0.setAlpha((int) (0.7f * 255));
-								icon1.setAlpha((int) (0.7f * 255));
 								
-								item.icon = new LayerDrawable(new Drawable[] { icon0, icon1 });
+								item.icon = Util.layerTwoIcons(mActivity, icon0, icon1);
 								item.packageName = pkg_name;
 								array[app_array.get(pkg_name)] = item;
 							} catch (Exception e) {

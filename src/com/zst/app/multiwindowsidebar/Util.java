@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.LayerDrawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.RectShape;
 import android.os.Build;
@@ -87,5 +88,13 @@ public class Util {
 		} else {
 			view.setBackgroundDrawable(drawable);
 		}
+	}
+	
+	public static Drawable layerTwoIcons(Context c, Drawable icon0, Drawable icon1) {
+		LayerDrawable layer = new LayerDrawable(new Drawable[] { icon1, icon0 });
+		int size = dp(16, c);
+		layer.setLayerInset(0x0, 0, 0, size, size);
+		layer.setLayerInset(0x1, size, size, 0, 0);
+		return layer;
 	}
 }
