@@ -2,6 +2,7 @@
 <resources>
     <!-- Main -->
     <string name="app_name">MultiWindowSidebar</string>
+    <string name="app_name_toggle">Toggle MultiWindowSidebar</string>
     <string name="app_name_running">MultiWindowSidebar is running</string>
     
     <!-- Generic Strings -->
