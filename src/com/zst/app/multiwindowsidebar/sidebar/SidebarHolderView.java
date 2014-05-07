@@ -9,6 +9,7 @@ import com.zst.app.multiwindowsidebar.Util;
 
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
@@ -115,6 +116,11 @@ public class SidebarHolderView extends LinearLayout {
 		});
 	}
 	
+	public void applySidebarWidth(int dp) {
+		ViewGroup.LayoutParams bar_param = mBarView.getLayoutParams();
+		bar_param.width = mService.mAppColumns * Util.dp(dp, mService);
+	}
+	
 	public void setTabSize(int dp) {
 		RelativeLayout.LayoutParams param = (RelativeLayout.LayoutParams)
 				mTabView.getLayoutParams();
@@ -181,19 +187,43 @@ public class SidebarHolderView extends LinearLayout {
 					}
 				}
 				
-				mService.mHandler.post(new Runnable() {
-					@Override
-					public void run() {
-						mHolderView.removeAllViews();
-						for (SidebarItemView view : mItemViews) {
-							if (view != null)
-								mHolderView.addView(view);
-						}
-					}
-				});
 				
+				insertViews();
 			}
 		}).start();
+	}
+	
+	private void insertViews() {
+		final int columns = mService.mAppColumns;
+		Runnable r = new Runnable() {
+			@Override
+			public void run() {
+				mHolderView.removeAllViews();
+				if (columns == 1) {
+					for (SidebarItemView view : mItemViews) {
+						if (view != null)
+							mHolderView.addView(view);
+					}
+				} else {
+					for (int x = 0; x < mItemViews.length ; x = x + columns) {
+						LinearLayout layout = new LinearLayout(mService);
+						layout.setOrientation(LinearLayout.HORIZONTAL);
+						for (int y = x; y < x + columns && y < mItemViews.length; y++) {
+							SidebarItemView item = mItemViews[y];
+							if (item != null) {
+								item.setLayoutParams(new LinearLayout.LayoutParams(
+										0,
+										LinearLayout.LayoutParams.WRAP_CONTENT,
+										0.5f));
+								layout.addView(item);
+							}
+						}
+						mHolderView.addView(layout);			
+					}
+				}
+			}
+		};
+		mService.mHandler.post(r);
 	}
 
 	private void itemViewTouchEventHelper(SidebarItemView item, MotionEvent event, boolean long_press_verified) {

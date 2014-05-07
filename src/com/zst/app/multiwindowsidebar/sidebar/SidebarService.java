@@ -34,6 +34,7 @@ public class SidebarService extends Service {
 	public boolean mBarOnRight = true;
 	public int mAnimationTime;
 	public int mLabelSize;
+	public int mAppColumns;
 
 	private static SidebarHolderView mShownSidebar;
 	private static SidebarHiddenView mHiddenSidebar;
@@ -108,6 +109,11 @@ public class SidebarService extends Service {
 		} else {
 			stopForeground(true);
 		}
+		
+		mAppColumns = main_prefs.getInt(Common.PREF_KEY_COLUMN_NUMBER,
+				Common.PREF_DEF_COLUMN_NUMBER);
+		mShownSidebar.applySidebarWidth(80);
+		//TODO add option for customizing each column width
 		
 		mShownSidebar.addApps(app_prefs, getPackageManager());
 	}

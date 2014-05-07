@@ -71,6 +71,16 @@
             android:title="@string/pref_label_size_title" />
         
         <com.zst.app.multiwindowsidebar.preference.SeekBarDialog
+            defaultValue="1"
+            maximum="4"
+            minimum="1"
+            suffix=""
+            android:dialogTitle="@string/pref_column_number_title"
+            android:key="column_number"
+            android:summary="@string/pref_column_number_summary"
+            android:title="@string/pref_column_number_title" />
+        
+        <com.zst.app.multiwindowsidebar.preference.SeekBarDialog
             defaultValue="300"
             maximum="1000"
             minimum="0"

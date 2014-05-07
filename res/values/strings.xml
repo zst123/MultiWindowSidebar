@@ -53,6 +53,8 @@
     <string name="pref_tab_size_summary">Size of the sidebar tab in dp</string>
     <string name="pref_label_size_title">Label Size</string>
     <string name="pref_label_size_summary">Size of app name labels in sp</string>
+    <string name="pref_column_number_title">Column Number</string>
+    <string name="pref_column_number_summary">Number of icon columns for each row in the sidebar</string>
     <string name="pref_animation_time_title">Animation Speed</string>
     <string name="pref_animation_time_summary">Speed of the sidebar slide animation</string>
     
