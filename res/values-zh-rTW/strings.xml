@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">多窗口側邊欄</string>
+    <string name="left">左邊</string>
+    <string name="right">右邊</string>
+    <string name="add_app">添加程序</string>
+    <string name="group">組</string>
+    <string name="settings_default">默認值</string>
+    <string name="create_group">添加組</string>
+    <string name="create_group_done">該組已被添加</string>
+    <string name="create_group_empty1">第一應用程序不能爲空。</string>
+    <string name="create_group_empty2">第二應用程序不能爲空。</string>
+    <string name="create_group_warning">注：組將只與 XHaloFloatingWindow 或 XMultiWindow 應用程序啓動模式正常工作。</string>
+    <string name="create_group_from_service">該應用程序已經自動檢測。請在保存前確認。</string>
+    <string name="create_group_first">"選擇第一個應用程序
+(在頂部或左側打開)"</string>
+    <string name="create_group_second">"選擇第二個應用程序
+(在底部或右側打開)"</string>
+    <string name="pref_main_header">Main</string>
+    <string name="pref_toggle_service_title">顯示或隱藏</string>
+    <string name="pref_toggle_service_summary">顯示或隱藏側邊欄</string>
+    <string name="pref_start_on_boot_title">開機自啓</string>
+    <string name="pref_start_on_boot_summary">啓動設備後自動顯示側邊欄</string>
+    <string name="pref_launch_mode_title">應用程序模式</string>
+    <string name="pref_launch_mode_summary">爲應用程序選擇一種使用方式</string>
+    <string name="pref_launch_mode_normally">默認 (正常啓動)</string>
+    <string name="pref_launch_mode_pa_halo">ParanoidAndroid Halo</string>
+    <string name="pref_launch_mode_xhfw">XHaloFloatingWindow</string>
+    <string name="pref_launch_mode_xmw">XMultiWindow</string>
+    <string name="pref_launch_mode_error_xhfw">"XHaloFloatingWindow does 未安裝。
+該默認無法使用。"</string>
+    <string name="pref_launch_mode_error_xmw">"XMultiWindow 未安裝。
+該默認無法使用。"</string>
+    <string name="pref_select_app_title">選擇應用</string>
+    <string name="pref_select_app_summary">在側邊欄中添加應用程序</string>
+    <string name="pref_appearance_header">外觀</string>
+    <string name="pref_sidebar_position_title">位置</string>
+    <string name="pref_sidebar_position_summary">選擇側邊欄的顯示位置</string>
+    <string name="pref_tab_size_title">半圓標簽大小</string>
+    <string name="pref_tab_size_summary">調整半圓標簽的大小</string>
+    <string name="pref_label_size_title">標簽大小</string>
+    <string name="pref_label_size_summary">應用程序名稱大小</string>
+    <string name="pref_animation_time_title">動畫速度</string>
+    <string name="pref_animation_time_summary">側邊欄的滑動速度</string>
+    <string name="app_list_empty">"在列表中沒有應用程序。
+請選擇一些應用程序。"</string>
+    <string name="app_launch_error">"啓動應用程序時出錯:
+"</string>
+</resources>
