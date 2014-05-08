@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Main -->
+    <string name="app_name">MultiWindowSidebar</string>
+    
+    <!-- Generic Strings -->
+    <string name="left">左边</string>
+    <string name="right">右边</string>
+    <string name="add_app">添加应用</string>
+    <string name="group">分组</string>
+    <string name="settings_default">默认值</string>
+    
+    <!-- Creating Group -->
+    <string name="create_group">创建分组</string>
+    <string name="create_group_done">分组已创建</string>
+    <string name="create_group_empty1">第一个应用不能为空白.</string>
+    <string name="create_group_empty2">第二个应用不能为空白.</string>
+    <string name="create_group_warning">注意: 分组目前仅能与 XHaloFloatingWindow 或者 XMultiWindow 应用启动模式使用.</string>
+    <string name="create_group_from_service">应用已经自动检测. 保存前请确认.</string>
+    <string name="create_group_first">选择第一个应用\n(将打开在上面或者左边)</string>
+    <string name="create_group_second">选择第二个应用\n(将打开在下面或者右边)</string>
+    
+    <!-- Preference / Main -->
+    <string name="pref_main_header">主设置</string>
+    <string name="pref_toggle_service_title">服务开关</string>
+    <string name="pref_toggle_service_summary">显示或隐藏侧边栏</string>
+    <string name="pref_start_on_boot_title">随系统启动</string>
+    <string name="pref_start_on_boot_summary">启动设备后自动启用侧边栏</string>
+    
+    <string name="pref_launch_mode_title">应用启动模式</string>
+    <string name="pref_launch_mode_summary">选择一个启动模式来启动选择的应用</string>
+    <string name="pref_launch_mode_normally">默认 (默认启动)</string>
+    <string name="pref_launch_mode_pa_halo">ParanoidAndroid Halo</string>
+    <string name="pref_launch_mode_xhfw">XHaloFloatingWindow</string>
+    <string name="pref_launch_mode_xmw">XMultiWindow</string>
+    <string name="pref_launch_mode_error_xhfw">XHaloFloatingWindow 貌似没有安装.\n这个启动模式不能离开它.</string>
+    <string name="pref_launch_mode_error_xmw">XMultiWindow 貌似没有安装.\n这个启动模式不能离开它.</string>
+    
+    <string name="pref_select_app_title">选择应用</string>
+    <string name="pref_select_app_summary">选择显示在侧边栏的应用</string>
+    
+    <!-- Preference / Appearence -->
+    <string name="pref_appearance_header">显示</string>
+    <string name="pref_sidebar_position_title">侧边栏位置</string>
+    <string name="pref_sidebar_position_summary">选择侧边栏是显示在左边还是右边</string>
+    <string name="pref_tab_size_title">标签大小</string>
+    <string name="pref_tab_size_summary">侧边栏标签的大小，单位为 dp</string>
+    <string name="pref_label_size_title">应用名称大小</string>
+    <string name="pref_label_size_summary">应用名称的大小，单位为 sp</string>
+    <string name="pref_animation_time_title">动画效果速度</string>
+    <string name="pref_animation_time_summary">侧边栏滑动的动画速度</string>
+    
+    <!-- Service -->
+    <string name="app_list_empty">列表中没有应用.\n请在设置中选择一些应用.</string>
+    <string name="app_launch_error">启动应用时出现了一些问题:\n</string>
+    
+</resources>
