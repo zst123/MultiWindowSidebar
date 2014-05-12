@@ -4,6 +4,7 @@ import com.zst.app.multiwindowsidebar.Common;
 import com.zst.app.multiwindowsidebar.IntentUtil;
 import com.zst.app.multiwindowsidebar.MainActivity;
 import com.zst.app.multiwindowsidebar.R;
+import com.zst.app.multiwindowsidebar.Util;
 
 import android.app.Notification;
 import android.app.PendingIntent;
@@ -35,6 +36,7 @@ public class SidebarService extends Service {
 	public int mAnimationTime;
 	public int mLabelSize;
 	public int mAppColumns;
+	public int mTabSize;
 
 	private static SidebarHolderView mShownSidebar;
 	private static SidebarHiddenView mHiddenSidebar;
@@ -73,10 +75,10 @@ public class SidebarService extends Service {
 		SharedPreferences app_prefs = getSharedPreferences(Common.KEY_PREFERENCE_APPS, Context.MODE_PRIVATE);
 		SharedPreferences main_prefs = getSharedPreferences(Common.KEY_PREFERENCE_MAIN, Context.MODE_PRIVATE);
 		
-		final int tab_size = main_prefs.getInt(Common.PREF_KEY_TAB_SIZE,
+		mTabSize = main_prefs.getInt(Common.PREF_KEY_TAB_SIZE,
 				Common.PREF_DEF_TAB_SIZE);
-		mShownSidebar.setTabSize(tab_size);
-		mHiddenSidebar.setTabSize(tab_size);
+		mShownSidebar.setTabSize(mTabSize);
+		mHiddenSidebar.setTabSize(mTabSize);
 		
 		final int speed = main_prefs.getInt(Common.PREF_KEY_ANIM_TIME,
 				Common.PREF_DEF_ANIM_TIME);
@@ -213,9 +215,11 @@ public class SidebarService extends Service {
 	private int mOldMargin = 20;
 	private int mMargin = 20;
 	private float mInitialPosition;
-	public boolean tabTouchEvent(MotionEvent event) {
+	private float mInitialSwipe;
+	public boolean tabTouchEvent(MotionEvent event, boolean currentlyOpen) {
 		switch (event.getAction()) {
 		case MotionEvent.ACTION_DOWN:
+			mInitialSwipe = event.getRawX();
 			mInitialPosition = event.getRawY();
 			mOldMargin = mMargin;
 			break;
@@ -233,8 +237,22 @@ public class SidebarService extends Service {
 				mHiddenSidebar.setMarginFromTop(mMargin);
 			} catch (Exception e) {
 			}
-			if (Math.abs(mOldMargin - mMargin) > 25) {
+			if (Math.abs(mOldMargin - mMargin) > Util.dp(18, this)) {
 				return true;
+			} else {
+				int sensitivity = Util.dp(mTabSize * 2, this);
+				if (mInitialSwipe == 0 || !currentlyOpen) {
+				} else if (mInitialSwipe - event.getRawX() > sensitivity) { //right to left
+					if (!mBarOnRight) {
+						hideBar();
+						return true;
+					}
+				} else if (mInitialSwipe - event.getRawX() < -sensitivity) { //left to right
+					if (mBarOnRight) {
+						hideBar();
+						return true;
+					}
+				}
 			}
 			break;
 		}

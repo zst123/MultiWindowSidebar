@@ -94,7 +94,7 @@ public class SidebarHiddenView extends LinearLayout {
 			mTab.setImageState(new int[] { android.R.attr.state_empty }, false);
 			break;
 		}
-		if (mService.tabTouchEvent(event)) {
+		if (mService.tabTouchEvent(event, false)) {
 			mService.mHandler.removeCallbacks(runnable);
 		};
 		return true;
