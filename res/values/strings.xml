@@ -11,6 +11,8 @@
     <string name="add_app">Add App</string>
     <string name="group">Group</string>
     <string name="settings_default">Default Value</string>
+    <string name="apply">Apply</string>
+    <string name="color_hex">Color Hex</string>
     
     <!-- Creating Group -->
     <string name="create_group">Create Group</string>
@@ -65,4 +67,8 @@
     <!-- Themes -->
     <string name="theme_default">Default (Original Note 3)\nby Samsung</string>
     <string name="theme_inverted">Inverted Note 3\nby foreverloco@XDA</string>
+
+    <!-- Do not translate -->
+    <string name="arrow_symbol">➙</string>
+
 </resources>

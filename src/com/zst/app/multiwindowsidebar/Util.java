@@ -6,6 +6,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
@@ -96,5 +97,21 @@ public class Util {
 		layer.setLayerInset(0x0, 0, 0, size, size);
 		layer.setLayerInset(0x1, size, size, 0, 0);
 		return layer;
+	}
+	
+	public static int parseColorFromString(String str, String defColorWithoutSymbols) {
+		str.replaceAll("\\s+", "");
+		// Remove all spaces
+		if (str.equals("")) {
+			str = defColorWithoutSymbols;
+		}
+		if (!str.startsWith("#")) {
+			str = "#" + str;
+		}
+		try {
+			return Color.parseColor(str);
+		} catch (Exception e) {
+			return Color.parseColor("#" + defColorWithoutSymbols);
+		}
 	}
 }
