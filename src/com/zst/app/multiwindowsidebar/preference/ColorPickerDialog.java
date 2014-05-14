@@ -33,7 +33,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
 
-public abstract class ColorPickerDialog extends Preference implements OnPreferenceClickListener {
+public class ColorPickerDialog extends Preference implements OnPreferenceClickListener {
 	
 	SharedPreferences mPref;
 	ImageView mColorBox;
@@ -75,7 +75,6 @@ public abstract class ColorPickerDialog extends Preference implements OnPreferen
 					setColor(mDefaultColor);
 					break;
 				}
-				onSettingsChanged();
 			}
 		};
 		d.setButton(AlertDialog.BUTTON_POSITIVE, mRes.getString(android.R.string.ok), listener);
@@ -84,8 +83,7 @@ public abstract class ColorPickerDialog extends Preference implements OnPreferen
 		d.show();
 		return true;
 	}
-		
-	public abstract void onSettingsChanged();
+			
 	public String getColorString() {
 		return Integer.toHexString(getColor());
 	}
@@ -104,5 +102,8 @@ public abstract class ColorPickerDialog extends Preference implements OnPreferen
 	public void setColor(String clr) {
 		mPref.edit().putString(getKey(), clr).commit();
 		refreshColorBox();
+		if (getOnPreferenceChangeListener() != null) {
+			getOnPreferenceChangeListener().onPreferenceChange(this, clr);
+		}
 	}
 }

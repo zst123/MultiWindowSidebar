@@ -35,6 +35,7 @@ public class SidebarService extends Service {
 	public boolean mBarOnRight = true;
 	public int mAnimationTime;
 	public int mLabelSize;
+	public int mLabelColor;
 	public int mAppColumns;
 	public int mTabSize;
 
@@ -91,6 +92,9 @@ public class SidebarService extends Service {
 		final int label_size = main_prefs.getInt(Common.PREF_KEY_LABEL_SIZE,
 				Common.PREF_DEF_LABEL_SIZE);
 		mLabelSize = label_size;
+		final int label_color = Util.parseColorFromString(main_prefs.getString(Common.PREF_KEY_LABEL_COLOR,
+				Common.PREF_DEF_LABEL_COLOR), Common.PREF_DEF_LABEL_COLOR);
+		mLabelColor = label_color;
 		
 		// Add the foreground notification
 		if (main_prefs.getBoolean(Common.PREF_KEY_KEEP_IN_BG, Common.PREF_DEF_KEEP_IN_BG)) {

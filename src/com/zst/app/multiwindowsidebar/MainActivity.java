@@ -42,6 +42,7 @@ public class MainActivity extends Activity {
 			findPreference(Common.PREF_KEY_LABEL_SIZE).setOnPreferenceChangeListener(this);
 			findPreference(Common.PREF_KEY_ANIM_TIME).setOnPreferenceChangeListener(this);
 			findPreference(Common.PREF_KEY_COLUMN_NUMBER).setOnPreferenceChangeListener(this);
+			findPreference(Common.PREF_KEY_LABEL_COLOR).setOnPreferenceChangeListener(this);
 		}
 		
 		@Override
@@ -86,6 +87,7 @@ public class MainActivity extends Activity {
 			} else if (k.equals(Common.PREF_KEY_TAB_SIZE)
 					|| k.equals(Common.PREF_KEY_COLUMN_NUMBER)
 					|| k.equals(Common.PREF_KEY_KEEP_IN_BG)
+					|| k.equals(Common.PREF_KEY_LABEL_COLOR)
 					|| k.equals(Common.PREF_KEY_LABEL_SIZE)) {
 				Util.refreshService(getActivity());
 			} else if (k.equals(Common.PREF_KEY_SIDEBAR_POSITION) ||

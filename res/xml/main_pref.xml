@@ -70,6 +70,12 @@
             android:summary="@string/pref_label_size_summary"
             android:title="@string/pref_label_size_title" />
         
+        <com.zst.app.multiwindowsidebar.preference.ColorPickerDialog
+            defaultValue="FF000000"
+            android:key="label_color"
+            android:summary="@string/pref_label_color_summary"
+            android:title="@string/pref_label_color_title" />
+        
         <com.zst.app.multiwindowsidebar.preference.SeekBarDialog
             defaultValue="1"
             maximum="4"

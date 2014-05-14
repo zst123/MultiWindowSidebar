@@ -56,6 +56,8 @@ public abstract class SidebarItemView extends LinearLayout {
 			mLabel.setTextSize(TypedValue.COMPLEX_UNIT_SP, service.mLabelSize);
 		}
 		
+		mLabel.setTextColor(service.mLabelColor);
+		
 		setOnTouchListener(new View.OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
