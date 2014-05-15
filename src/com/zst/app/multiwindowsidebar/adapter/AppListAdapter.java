@@ -24,18 +24,18 @@ import android.widget.TextView;
 
 public abstract class AppListAdapter extends BaseAdapter {
 	
-	final AppListActivity mActivity;
+	final Context mContext;
 	final Handler mHandler;
 	final PackageManager mPackageManager;
 	final LayoutInflater mLayoutInflater;
 	
 	protected LinkedList<PackageItem> mApps = new LinkedList<PackageItem>();
 		
-	public AppListAdapter(AppListActivity act, Map<String, Integer> list) {
-		mActivity = act;
+	public AppListAdapter(Context context, Map<String, Integer> list) {
+		mContext = context;
 		mHandler = new Handler();
-		mPackageManager = act.getBaseContext().getPackageManager();
-		mLayoutInflater = (LayoutInflater) act.getBaseContext()
+		mPackageManager = context.getPackageManager();
+		mLayoutInflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		update(list);
 	}
@@ -53,14 +53,14 @@ public abstract class AppListAdapter extends BaseAdapter {
 								ApplicationInfo ai0 = mPackageManager.getApplicationInfo(str[0], 0);
 								ApplicationInfo ai1 = mPackageManager.getApplicationInfo(str[1], 0);
 								final PackageItem item = new PackageItem();
-								item.title =  mActivity.getResources().getString(R.string.group)
+								item.title =  mContext.getResources().getString(R.string.group)
 										+ " ("+ai0.loadLabel(mPackageManager) + " & "
 										+ ai1.loadLabel(mPackageManager) + ")";
 								
 								final Drawable icon0 = ai0.loadIcon(mPackageManager).mutate();
 								final Drawable icon1 = ai1.loadIcon(mPackageManager).mutate();
 								
-								item.icon = Util.layerTwoIcons(mActivity, icon0, icon1);
+								item.icon = Util.layerTwoIcons(mContext, icon0, icon1);
 								item.packageName = pkg_name;
 								array[app_array.get(pkg_name)] = item;
 							} catch (Exception e) {
