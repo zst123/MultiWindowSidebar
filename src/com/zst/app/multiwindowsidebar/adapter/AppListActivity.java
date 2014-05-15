@@ -41,6 +41,16 @@ public class AppListActivity extends Activity {
 	}
 	
 	@Override
+	public void onPause() {
+		super.onPause();
+		// Avoid WindowLeaked Exception
+		// http://publicstaticdroidmain.com/2012/01/avoiding-android-memory-leaks-part-1/
+		if (dDialog != null && dDialog.isShowing()) {
+			dDialog.dismiss();
+		}
+	}
+	
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuItem add = menu.add(Menu.NONE, ID_ADD_APP, 0, R.string.add_app);
 		add.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);

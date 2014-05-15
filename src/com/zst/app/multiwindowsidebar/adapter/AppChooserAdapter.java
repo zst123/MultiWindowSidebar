@@ -44,7 +44,6 @@ public abstract class AppChooserAdapter extends BaseAdapter implements Filterabl
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		mInstalledAppInfo = mPackageManager.getInstalledPackages(PackageManager.GET_PERMISSIONS);
 		mTemporarylist = mInstalledAppInfo;
-		update();
 	}
 	
 	public synchronized void update() {
