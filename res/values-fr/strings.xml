@@ -2,6 +2,8 @@
 <resources>
     <!-- Main -->
     <string name="app_name">MultiWindowSidebar</string>
+    <string name="app_name_toggle">Toggle MultiWindowSidebar</string>
+    <string name="app_name_running">MultiWindowSidebar est en cours d\'exécution</string>   
     
     <!-- Generic Strings -->
     <string name="left">Gauche</string>
@@ -9,6 +11,8 @@
     <string name="add_app">Ajouter applis</string>
     <string name="group">Groupe</string>
     <string name="settings_default">Valeur par défaut</string>
+    <string name="apply">Appliquer</string>
+    <string name="color_hex">Couleur Hex</string>    
     
     <!-- Creating Group -->
     <string name="create_group">Créer un groupe</string>
@@ -26,6 +30,8 @@
     <string name="pref_toggle_service_summary">Afficher ou masquer la barre latérale</string>
     <string name="pref_start_on_boot_title">Lancer au démarrage</string>
     <string name="pref_start_on_boot_summary">Afficher automatiquement la barre latérale après le démarrage de l\'appareil</string>
+    <string name="pref_keep_app_bg_title">Garder actif en arrière-plan</string>
+    <string name="pref_keep_app_bg_summary">Empêcher le système de tuer la barre latérale en cas de très peu de mémoire en affichant une notification</string>
     
     <string name="pref_launch_mode_title">Mode de lancement</string>
     <string name="pref_launch_mode_summary">Choisir le mode de lancement des applications</string>
@@ -43,15 +49,28 @@
     <string name="pref_appearance_header">Apparence</string>
     <string name="pref_sidebar_position_title">Position de la barre latérale</string>
     <string name="pref_sidebar_position_summary">Sélectionner où afficher la barre latérale à l\'écran</string>
+    <string name="pref_sidebar_theme_title">Thème de la barre latérale</string>
+    <string name="pref_sidebar_theme_summary">Sélectionner l\'apparence visuelle de la barre latérale</string>   
     <string name="pref_tab_size_title">Taille de l\'onglet</string>
     <string name="pref_tab_size_summary">Taille de l\'onglet de la barre latérale</string>
     <string name="pref_label_size_title">Taille des libellés</string>
-    <string name="pref_label_size_summary">Taille des noms sous les applications</string>
+    <string name="pref_label_size_summary">Taille du nom des applications</string>
+    <string name="pref_label_color_title">Couleur des libellés</string>
+    <string name="pref_label_color_summary">Couleur du nom des applications</string>
+    <string name="pref_column_number_title">Nombre de colonnes</string>
+    <string name="pref_column_number_summary">Nombre de colonnes d\'icône pour chaque ligne dans la barre latérale</string>    
     <string name="pref_animation_time_title">Vitesse d\'animation</string>
     <string name="pref_animation_time_summary">Vitesse d\'ouverture de la barre latérale</string>
     
     <!-- Service -->
     <string name="app_list_empty">Il n\'y a aucune application dans la barre latérale.\nVeuillez faire votre sélection dans les paramètres.</string>
-    <string name="app_launch_error">Un problème lors du lancement de l\'application a eu lieu:\n</string>
+    <string name="app_launch_error">Un problème a eu lieu lors du lancement de l\'application:\n</string>
+    
+    <!-- Themes -->
+    <string name="theme_default">Défaut (Original Note 3)\npar Samsung</string>
+    <string name="theme_inverted">Inversé Note 3\npar foreverloco@XDA</string>
+
+    <!-- Do not translate -->
+    <string name="arrow_symbol">➙</string>
     
 </resources>
