@@ -2,13 +2,17 @@
 <resources>
     <!-- Main -->
     <string name="app_name">Kenar Çubuğu</string>
+    <string name="app_name_toggle">Kenar Çubuğunu Aç/Kapa</string>
+    <string name="app_name_running">Kenar Çubuğu çalışıyor</string>
     
     <!-- Generic Strings -->
     <string name="left">Sol</string>
     <string name="right">Sağ</string>
     <string name="add_app">Ekle</string>
     <string name="group">Grupla</string>
-    <string name="settings_default">Varsayılan</string>
+    <string name="settings_default">Varsayılan Değer</string>
+    <string name="apply">Uygula</string>
+    <string name="color_hex">Renk Kodu (Hex)</string>
     
     <!-- Creating Group -->
     <string name="create_group">Grup Oluştur</string>
@@ -25,7 +29,9 @@
     <string name="pref_toggle_service_title">Aç/Kapat</string>
     <string name="pref_toggle_service_summary">Kenar Çubuğu</string>
     <string name="pref_start_on_boot_title">Başlangıçta Çalıştır</string>
-    <string name="pref_start_on_boot_summary">Başlangıçtan sonra kenar çubuğunu otomatik olarak göster.</string>
+    <string name="pref_start_on_boot_summary">Başlangıçtan sonra kenar çubuğunu otomatik olarak çalıştır</string>
+    <string name="pref_keep_app_bg_title">Arkaplanda Çalıştır</string>
+    <string name="pref_keep_app_bg_summary">Durum çubuğunda bildirim göstererek, sistemin Kenar Çubuğu\'nu kapatmasını önler</string>
     
     <string name="pref_launch_mode_title">Uygulama Başlatma Modu</string>
     <string name="pref_launch_mode_summary">Seçilen uygulamaları başlatmak için bir mod seçin</string>
@@ -37,21 +43,30 @@
     <string name="pref_launch_mode_error_xmw">XMultiWindow yüklü değil.\nBu başlatma modu XMultiWindow modülü olmadan çalışmaz.</string>
     
     <string name="pref_select_app_title">Uygulama Seç</string>
-    <string name="pref_select_app_summary">Kenar çubuğunda gözükecek uygulamaları seç</string>
+    <string name="pref_select_app_summary">Kenar çubuğunda gösterilecek uygulamaları seç</string>
     
     <!-- Preference / Appearence -->
     <string name="pref_appearance_header">Görünüm</string>
     <string name="pref_sidebar_position_title">Kenar Çubuğu Konumu</string>
-    <string name="pref_sidebar_position_summary">Kenar çubuğunun ekranın neresinde gözükeceğini belirler</string>
+    <string name="pref_sidebar_position_summary">Kenar Çubuğu\'nun, ekranın neresinde gözükeceğini belirler</string>
+    <string name="pref_sidebar_theme_title">Tema</string>
+    <string name="pref_sidebar_theme_summary">Kenar Çubuğu\'nun temasını değiştirir</string>
     <string name="pref_tab_size_title">Gösterge Boyutu</string>
-    <string name="pref_tab_size_summary">Kenar çubuğu göstergesinin boyutunu belirler</string>
+    <string name="pref_tab_size_summary">Kenar Çubuğu göstergesinin boyutunu belirler</string>
     <string name="pref_label_size_title">İsim Boyutu</string>
     <string name="pref_label_size_summary">Uygulama isimilerinin boyutunu belirler</string>
+    <string name="pref_label_color_title">İsim Rengi</string>
+    <string name="pref_label_color_summary">Uygulama isimlerinin rengini belirler</string>
+    <string name="pref_column_number_title">Sütun Sayısı</string>
+    <string name="pref_column_number_summary">Kenar Çubuğu\'nun kaç sütun uygulama göstereceğini belirler</string>
     <string name="pref_animation_time_title">Animasyon Hızı</string>
-    <string name="pref_animation_time_summary">Kenar çubuğu kaydırma animasyonunun hızını ayarlar</string>
+    <string name="pref_animation_time_summary">Kenar Çubuğu kaydırma animasyonunun hızını belirler</string>
     
     <!-- Service -->
     <string name="app_list_empty">Listede hiçbir uygulama yok.\nLütfen birkaç uygulama ekleyin.</string>
     <string name="app_launch_error">Uygulama başlatılıken bir hata oluştu:\n</string>
     
+    <!-- Themes -->
+    <string name="theme_default">Varsayılan (Orijinal Note 3)\n Samsung</string>
+    <string name="theme_inverted">Koyu Note 3\n foreverloco@XDA</string>
 </resources>
