@@ -6,6 +6,7 @@ import com.zst.app.multiwindowsidebar.Util;
 import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
@@ -40,6 +41,10 @@ public class SidebarHiddenView extends LinearLayout {
 		LinearLayout.LayoutParams param = (LinearLayout.LayoutParams) mTab.getLayoutParams();
 		param.width = Util.dp(dp, getContext());;
 		mTab.setLayoutParams(param);
+	}
+	
+	public void setTabAlpha(float decimal) {
+		((View) mTab).setAlpha(decimal);
 	}
 	
 	public void animateView(boolean visible) {

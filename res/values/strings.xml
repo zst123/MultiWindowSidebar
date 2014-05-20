@@ -51,6 +51,8 @@
     <string name="pref_sidebar_position_summary">Select the side of the screen to show the sidebar</string>
     <string name="pref_sidebar_theme_title">Sidebar Theme</string>
     <string name="pref_sidebar_theme_summary">Select the visual appearance of the sidebar</string>
+    <string name="pref_tab_alpha_hidden_title">Tab Alpha (Hidden)</string>
+    <string name="pref_tab_alpha_hidden_summary">Transparency of the tab when the sidebar is hidden</string>
     <string name="pref_tab_size_title">Tab Size</string>
     <string name="pref_tab_size_summary">Size of the sidebar tab in dp</string>
     <string name="pref_label_size_title">Label Size</string>

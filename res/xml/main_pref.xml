@@ -51,6 +51,16 @@
             android:title="@string/pref_sidebar_theme_title" />
 
         <com.zst.app.multiwindowsidebar.preference.SeekBarDialog
+            defaultValue="100"
+            maximum="100"
+            minimum="0"
+            suffix="%"
+            android:dialogTitle="@string/pref_tab_alpha_hidden_title"
+            android:key="tab_alpha_hidden"
+            android:summary="@string/pref_tab_alpha_hidden_summary"
+            android:title="@string/pref_tab_alpha_hidden_title" />
+        
+        <com.zst.app.multiwindowsidebar.preference.SeekBarDialog
             defaultValue="32"
             maximum="96"
             minimum="12"
