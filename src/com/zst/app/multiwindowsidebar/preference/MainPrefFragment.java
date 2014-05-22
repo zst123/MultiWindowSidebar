@@ -81,7 +81,7 @@ public class MainPrefFragment extends PreferenceFragment implements OnPreference
 		@Override
 		public boolean onPreferenceChange(Preference preference, Object newValue) {
 			Util.refreshService(getActivity());
-			return false;
+			return true;
 		}
 		
 	};
@@ -90,7 +90,7 @@ public class MainPrefFragment extends PreferenceFragment implements OnPreference
 		@Override
 		public boolean onPreferenceChange(Preference preference, Object newValue) {
 			Util.resetService(getActivity());
-			return false;
+			return true;
 		}
 		
 	};

@@ -33,7 +33,7 @@ public class AppearencePrefFragment extends PreferenceFragment {
 		@Override
 		public boolean onPreferenceChange(Preference preference, Object newValue) {
 			Util.refreshService(getActivity());
-			return false;
+			return true;
 		}
 		
 	};
@@ -42,7 +42,7 @@ public class AppearencePrefFragment extends PreferenceFragment {
 		@Override
 		public boolean onPreferenceChange(Preference preference, Object newValue) {
 			Util.resetService(getActivity());
-			return false;
+			return true;
 		}
 		
 	};
