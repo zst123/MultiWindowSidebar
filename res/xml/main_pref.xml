@@ -19,17 +19,27 @@
             android:summary="@string/pref_start_on_boot_summary"
             android:title="@string/pref_start_on_boot_title" />
 
-        <ListPreference
-            android:entries="@array/launch_mode_entries"
-            android:entryValues="@array/launch_mode_values"
-            android:key="launch_mode"
-            android:summary="@string/pref_launch_mode_summary"
-            android:title="@string/pref_launch_mode_title" />
-
         <Preference
             android:key="select_apps"
             android:summary="@string/pref_select_app_summary"
             android:title="@string/pref_select_app_title" />
+    </PreferenceCategory>
+    
+    <!-- App Launch -->
+    <PreferenceCategory android:title="@string/pref_main_header" >
+        <ListPreference
+            android:entries="@array/drag_launch_mode_entries"
+            android:entryValues="@array/drag_launch_mode_values"
+            android:key="drag_launch_mode"
+            android:summary="@string/pref_drag_launch_mode_summary"
+            android:title="@string/pref_drag_launch_mode_title" />
+        
+        <ListPreference
+            android:entries="@array/tap_launch_mode_entries"
+            android:entryValues="@array/tap_launch_mode_values"
+            android:key="tap_launch_mode"
+            android:summary="@string/pref_tap_launch_mode_summary"
+            android:title="@string/pref_tap_launch_mode_title" />
     </PreferenceCategory>
 
 </PreferenceScreen>

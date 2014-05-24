@@ -28,7 +28,8 @@ public class MainPrefFragment extends PreferenceFragment implements OnPreference
 		findPreference(Common.PREF_KEY_SELECT_APPS).setOnPreferenceClickListener(this);
 		
 		// Change
-		findPreference(Common.PREF_KEY_LAUNCH_MODE).setOnPreferenceChangeListener(this);
+		findPreference(Common.PREF_KEY_DRAG_LAUNCH_MODE).setOnPreferenceChangeListener(this);
+		findPreference(Common.PREF_KEY_TAP_LAUNCH_MODE).setOnPreferenceChangeListener(this);
 
 		// Refresh Change Listener
 		findPreference(Common.PREF_KEY_KEEP_IN_BG).setOnPreferenceChangeListener(sRefreshChangeListener);
@@ -54,18 +55,43 @@ public class MainPrefFragment extends PreferenceFragment implements OnPreference
 	@Override
 	public boolean onPreferenceChange(Preference pref, Object newValue) {
 		String k = pref.getKey();
-		if (k.equals(Common.PREF_KEY_LAUNCH_MODE)) {
+		if (k.equals(Common.PREF_KEY_DRAG_LAUNCH_MODE)) {
 			Util.refreshService(getActivity());
 			
 			if (newValue instanceof String) {
 				switch (Integer.parseInt((String) newValue)) {
-				case IntentUtil.MODE_XHALO_FLOATINGWINDOW:
+				case IntentUtil.DragMode.XHFW_PORTRAIT:
+				case IntentUtil.DragMode.XHFW_LANDSCAPE:
 					if (!Util.isAppInstalled(getActivity().getPackageManager(),
 							Common.PKG_XHALOFLOATINGWINDOW)) {
 						Util.dialog(getActivity(), R.string.pref_launch_mode_error_xhfw);
 					}
 					break;
-				case IntentUtil.MODE_XMULTI_WINDOW:
+				case IntentUtil.DragMode.XMULTI_WINDOW:
+					if (!Util.isAppInstalled(getActivity().getPackageManager(),
+							Common.PKG_XMULTIWINDOW)) {
+						Util.dialog(getActivity(), R.string.pref_launch_mode_error_xmw);
+					}
+					break;
+				}
+			}
+		} else if (k.equals(Common.PREF_KEY_TAP_LAUNCH_MODE)) {
+			Util.refreshService(getActivity());
+			
+			if (newValue instanceof String) {
+				switch (Integer.parseInt((String) newValue)) {
+				case IntentUtil.TapMode.XHFW_TOP:
+				case IntentUtil.TapMode.XHFW_BOTTOM:
+				case IntentUtil.TapMode.XHFW_LEFT:
+				case IntentUtil.TapMode.XHFW_RIGHT:
+				case IntentUtil.TapMode.XHFW_CENTER:
+					if (!Util.isAppInstalled(getActivity().getPackageManager(),
+							Common.PKG_XHALOFLOATINGWINDOW)) {
+						Util.dialog(getActivity(), R.string.pref_launch_mode_error_xhfw);
+					}
+					break;
+				case IntentUtil.TapMode.XMULTI_WINDOW_TOP:
+				case IntentUtil.TapMode.XMULTI_WINDOW_BOTTOM:
 					if (!Util.isAppInstalled(getActivity().getPackageManager(),
 							Common.PKG_XMULTIWINDOW)) {
 						Util.dialog(getActivity(), R.string.pref_launch_mode_error_xmw);

@@ -1,17 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="launch_mode_entries">
+    <string-array name="drag_launch_mode_entries">
         <item>@string/pref_launch_mode_normally</item>
         <item>@string/pref_launch_mode_pa_halo</item>
-        <item>@string/pref_launch_mode_xhfw</item>
+        <item>@string/pref_launch_mode_xhfw_p</item>
+        <item>@string/pref_launch_mode_xhfw_l</item>
         <item>@string/pref_launch_mode_xmw</item>
     </string-array>
-    <string-array name="launch_mode_values">
+    <string-array name="drag_launch_mode_values">
         <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
+        <item>10</item>
+        <item>20</item>
+        <item>21</item>
+        <item>30</item>
+    </string-array>
+    
+    <string-array name="tap_launch_mode_entries">
+        <item>@string/pref_launch_mode_normally</item>
+        <item>@string/pref_launch_mode_pa_halo</item>
+        <item>@string/pref_launch_mode_xhfw_center</item>
+        <item>@string/pref_launch_mode_xhfw_top</item>
+        <item>@string/pref_launch_mode_xhfw_bottom</item>
+        <item>@string/pref_launch_mode_xhfw_left</item>
+        <item>@string/pref_launch_mode_xhfw_right</item>
+        <item>@string/pref_launch_mode_xmw_top</item>
+        <item>@string/pref_launch_mode_xmw_bottom</item>
+    </string-array>
+    <string-array name="tap_launch_mode_values">
+        <item>0</item>
+        <item>10</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>30</item>
+        <item>31</item>
     </string-array>
     
     <string-array name="sidebar_position_entries">

@@ -56,11 +56,13 @@ public class WindowPositionOutline {
 	}
 	
 	public static int getPositionOfTouch(float x, float y, int screen_width, int screen_height) {
-		final boolean landscape = screen_width > screen_height;
+		boolean landscape = screen_width > screen_height;
 		
-		switch (IntentUtil.getLaunchMode()) {
-		case IntentUtil.MODE_XMULTI_WINDOW:
-		case IntentUtil.MODE_XHALO_FLOATINGWINDOW:
+		switch (IntentUtil.sLaunchModeDrag) {
+		case IntentUtil.DragMode.XMULTI_WINDOW:
+		case IntentUtil.DragMode.XHFW_LANDSCAPE:
+			landscape = !landscape;
+		case IntentUtil.DragMode.XHFW_PORTRAIT:
 			if (landscape) {
 				if (x < (screen_width / 2)) {
 					return IntentUtil.SIDE_LEFT;
@@ -75,10 +77,9 @@ public class WindowPositionOutline {
 				}
 			}
 			break;
-		case IntentUtil.MODE_PA_HALO:
+		case IntentUtil.DragMode.PA_HALO:
 			return IntentUtil.SIDE_PA_HALO;
-		case IntentUtil.MODE_UNKNOWN:
-		case IntentUtil.MODE_NONE:
+		case IntentUtil.DragMode.NONE:
 		default:
 			break; 
 		}

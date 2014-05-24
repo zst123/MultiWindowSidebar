@@ -90,8 +90,9 @@ public class SidebarMenuOptions {
 			acd.getWindow().setType(WindowManager.LayoutParams.TYPE_PHONE);
 		}
 		
-		if (IntentUtil.getLaunchMode() == IntentUtil.MODE_XHALO_FLOATINGWINDOW
-			|| IntentUtil.getLaunchMode() == IntentUtil.MODE_XMULTI_WINDOW){
+		if (IntentUtil.sLaunchModeDrag == IntentUtil.DragMode.XHFW_LANDSCAPE ||
+			IntentUtil.sLaunchModeDrag == IntentUtil.DragMode.XHFW_PORTRAIT ||
+			IntentUtil.sLaunchModeDrag == IntentUtil.DragMode.XMULTI_WINDOW){
 			tV_warning.setVisibility(View.GONE);
 		}
 		

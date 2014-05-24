@@ -33,11 +33,23 @@
     <string name="pref_keep_app_bg_title">Keep Service in Background</string>
     <string name="pref_keep_app_bg_summary">Prevent the system from killing the sidebar in very low memory situations by showing a notification</string>
     
-    <string name="pref_launch_mode_title">App Launch Mode</string>
-    <string name="pref_launch_mode_summary">Choose a mode to launch the selected apps in</string>
+    <string name="pref_drag_launch_mode_title">Drag Launch Mode</string>
+    <string name="pref_drag_launch_mode_summary">The mode to launch an app when dragged out of the sidebar</string>
+    <string name="pref_tap_launch_mode_title">Tap Launch Mode</string>
+    <string name="pref_tap_launch_mode_summary">The mode to launch an app when clicking it inside the sidebar</string>
+    
+    <!-- Modes -->
     <string name="pref_launch_mode_normally">Default (Normal Launch)</string>
     <string name="pref_launch_mode_pa_halo">ParanoidAndroid Halo</string>
-    <string name="pref_launch_mode_xhfw">XHaloFloatingWindow</string>
+    <string name="pref_launch_mode_xhfw_p">XHaloFloatingWindow (Portrait)</string>
+    <string name="pref_launch_mode_xhfw_l">XHaloFloatingWindow (Landscape)</string>
+    <string name="pref_launch_mode_xhfw_center">XHaloFloatingWindow (Center)</string>
+    <string name="pref_launch_mode_xhfw_top">XHaloFloatingWindow (Top)</string>
+    <string name="pref_launch_mode_xhfw_bottom">XHaloFloatingWindow (Bottom)</string>
+    <string name="pref_launch_mode_xhfw_left">XHaloFloatingWindow (Left)</string>
+    <string name="pref_launch_mode_xhfw_right">XHaloFloatingWindow (Right)</string>
+    <string name="pref_launch_mode_xmw_top">XMultiWindow (Top)</string>
+    <string name="pref_launch_mode_xmw_bottom">XMultiWindow (Bottom)</string>
     <string name="pref_launch_mode_xmw">XMultiWindow</string>
     <string name="pref_launch_mode_error_xhfw">XHaloFloatingWindow does not appear to be installed.\nThis launch mode will not work without it.</string>
     <string name="pref_launch_mode_error_xmw">XMultiWindow does not appear to be installed.\nThis launch mode will not work without it.</string>

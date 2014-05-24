@@ -13,25 +13,33 @@ public class IntentUtil {
 	public final static int SIDE_FULLSCREEN = 5;
 	public final static int SIDE_PA_HALO = 6;
 	
-	public static final int MODE_UNKNOWN = -1;
-	public static final int MODE_NONE = 0;
-	public static final int MODE_PA_HALO = 1;
-	public static final int MODE_XHALO_FLOATINGWINDOW = 2;
-	public static final int MODE_XMULTI_WINDOW = 3;	
-	
-	public static int sLaunchMode = 3;	
-
-	public static void setLaunchMode(int mode) {
-		sLaunchMode = mode;
+	public static final class DragMode {
+		public static final int NONE = 00;
+		public static final int PA_HALO = 10;
+		public static final int XHFW_PORTRAIT = 20;
+		public static final int XHFW_LANDSCAPE = 21;
+		public static final int XMULTI_WINDOW = 30;
 	}
 	
-	public static int getLaunchMode() {
-		return sLaunchMode;
+	public static final class TapMode {
+		public static final int NONE = 00;
+		public static final int PA_HALO = 10;
+		public static final int XHFW_CENTER = 20;
+		public static final int XHFW_TOP = 21;
+		public static final int XHFW_BOTTOM = 22;
+		public static final int XHFW_LEFT = 23;
+		public static final int XHFW_RIGHT = 24;
+		public static final int XMULTI_WINDOW_TOP = 30;
+		public static final int XMULTI_WINDOW_BOTTOM = 31;
+		//TODO Add menu
 	}
+	
+	public static int sLaunchModeDrag = DragMode.NONE;
+	public static int sLaunchModeTap = TapMode.NONE;
 
-	public static void launchIntent(Context context, Intent intent, int side) {
-		switch (sLaunchMode) {
-		case MODE_XHALO_FLOATINGWINDOW:
+	public static void launchIntentDrag(Context context, Intent intent, int side) {
+		switch (sLaunchModeDrag) {
+		case DragMode.XHFW_PORTRAIT:
 			if (side != SIDE_FULLSCREEN ||
 				side != SIDE_PA_HALO ||
 				side != SIDE_NONE) {
@@ -39,18 +47,61 @@ public class IntentUtil {
 			}
 			intent.addFlags(Common.FLAG_FLOATING_WINDOW);
 			break;
-		case MODE_PA_HALO:
+		case DragMode.XHFW_LANDSCAPE:
+			intent.addFlags(Common.FLAG_FLOATING_WINDOW);
+			if (side != SIDE_FULLSCREEN ||
+				side != SIDE_PA_HALO ||
+				side != SIDE_NONE) {
+				intent.putExtra(Common.EXTRA_XHALO_SNAP_SIDE, side);
+			}
+			break;
+		case DragMode.PA_HALO:
 			intent.addFlags(Common.FLAG_FLOATING_WINDOW);
 			break;
-		case MODE_XMULTI_WINDOW:
+		case DragMode.XMULTI_WINDOW:
 			if (side == SIDE_TOP || side == SIDE_LEFT) {
 				intent.addFlags(Common.FLAG_XMULTIWINDOW_UPVIEW);
 			} else if (side == SIDE_BOTTOM || side == SIDE_RIGHT) {
 				intent.addFlags(Common.FLAG_XMULTIWINDOW_DOWNVIEW);
 			}
 			break;
-		case MODE_UNKNOWN:
-		case MODE_NONE:
+		case DragMode.NONE:
+		default:
+			break;
+		}
+		context.startActivity(intent);
+	}
+	
+	public static void launchIntentTap(Context context, Intent intent) {
+		switch (sLaunchModeTap) {
+		case TapMode.XMULTI_WINDOW_TOP:
+			intent.addFlags(Common.FLAG_XMULTIWINDOW_UPVIEW);
+			break;
+		case TapMode.XMULTI_WINDOW_BOTTOM:
+			intent.addFlags(Common.FLAG_XMULTIWINDOW_DOWNVIEW);
+			break;
+		case TapMode.XHFW_TOP:
+			intent.putExtra(Common.EXTRA_XHALO_SNAP_SIDE, SIDE_TOP);
+			intent.addFlags(Common.FLAG_FLOATING_WINDOW);
+			break;
+		case TapMode.XHFW_BOTTOM:
+			intent.putExtra(Common.EXTRA_XHALO_SNAP_SIDE, SIDE_BOTTOM);
+			intent.addFlags(Common.FLAG_FLOATING_WINDOW);
+			break;
+		case TapMode.XHFW_LEFT:
+			intent.putExtra(Common.EXTRA_XHALO_SNAP_SIDE, SIDE_LEFT);
+			intent.addFlags(Common.FLAG_FLOATING_WINDOW);
+			break;
+		case TapMode.XHFW_RIGHT:
+			intent.putExtra(Common.EXTRA_XHALO_SNAP_SIDE, SIDE_RIGHT);
+			intent.addFlags(Common.FLAG_FLOATING_WINDOW);
+			break;
+		case TapMode.XHFW_CENTER:
+			intent.putExtra(Common.EXTRA_XHALO_SNAP_SIDE, SIDE_NONE);
+		case TapMode.PA_HALO:
+			intent.addFlags(Common.FLAG_FLOATING_WINDOW);
+			break;
+		case TapMode.NONE:
 		default:
 			break;
 		}

@@ -85,7 +85,7 @@ public abstract class SidebarItemView extends LinearLayout {
 				// TODO option to disable click
 				if (!isLongPressVerified)
 					// if it's a long press & not a click, we shouldn't launch
-					launchApp(IntentUtil.SIDE_TOP);
+					tappedApp();
 			}
 		});
 	}
@@ -99,7 +99,21 @@ public abstract class SidebarItemView extends LinearLayout {
 			try {
 				final Intent intent1 = new Intent(getContext().getPackageManager()
 						.getLaunchIntentForPackage(mPkg));
-				IntentUtil.launchIntent(getContext(), intent1, side);
+				IntentUtil.launchIntentDrag(getContext(), intent1, side);
+			} catch (NullPointerException e) {
+				Util.toast(getContext(), getResources().getString(R.string.app_launch_error) + mPkg);
+			}
+		}	
+	}
+	
+	public void tappedApp() {
+		if (TextUtils.isEmpty(mPkg)) {
+			Util.toast(getContext(), getResources().getString(R.string.app_launch_error) + mPkg);
+		} else {
+			try {
+				final Intent intent1 = new Intent(getContext().getPackageManager()
+						.getLaunchIntentForPackage(mPkg));
+				IntentUtil.launchIntentTap(getContext(), intent1);
 			} catch (NullPointerException e) {
 				Util.toast(getContext(), getResources().getString(R.string.app_launch_error) + mPkg);
 			}

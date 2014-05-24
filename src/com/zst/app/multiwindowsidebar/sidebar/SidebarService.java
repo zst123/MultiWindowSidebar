@@ -89,9 +89,10 @@ public class SidebarService extends Service {
 				Common.PREF_DEF_ANIM_TIME);
 		mAnimationTime = speed;
 		
-		final int mode = Integer.parseInt(main_prefs.getString(Common.PREF_KEY_LAUNCH_MODE,
-				Common.PREF_DEF_LAUNCH_MODE));
-		IntentUtil.setLaunchMode(mode);
+		IntentUtil.sLaunchModeDrag = Integer.parseInt(main_prefs.getString(Common.PREF_KEY_DRAG_LAUNCH_MODE,
+				Common.PREF_DEF_DRAG_LAUNCH_MODE));
+		IntentUtil.sLaunchModeTap = Integer.parseInt(main_prefs.getString(Common.PREF_KEY_TAP_LAUNCH_MODE,
+				Common.PREF_DEF_TAP_LAUNCH_MODE));
 
 		final int label_size = main_prefs.getInt(Common.PREF_KEY_LABEL_SIZE,
 				Common.PREF_DEF_LABEL_SIZE);

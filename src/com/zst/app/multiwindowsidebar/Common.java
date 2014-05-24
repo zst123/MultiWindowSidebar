@@ -31,8 +31,13 @@ public class Common {
 	public static final boolean PREF_DEF_START_ON_BOOT = false;
 	public static final String PREF_KEY_SIDEBAR_POSITION = "sidebar_position";
 	public static final String PREF_DEF_SIDEBAR_POSITION = "0";
-	public static final String PREF_KEY_LAUNCH_MODE = "launch_mode";
-	public static final String PREF_DEF_LAUNCH_MODE = "0";
+	
+	public static final String PREF_KEY_DRAG_LAUNCH_MODE = "drag_launch_mode";
+	public static final String PREF_DEF_DRAG_LAUNCH_MODE = "0";
+	
+	public static final String PREF_KEY_TAP_LAUNCH_MODE = "tap_launch_mode";
+	public static final String PREF_DEF_TAP_LAUNCH_MODE = "0";
+	
 	public static final String PREF_KEY_TAB_ALPHA_HIDDEN = "tab_alpha_hidden";
 	public static final int PREF_DEF_TAB_ALPHA_HIDDEN = 100;
 	public static final String PREF_KEY_TAB_SIZE = "tab_size";

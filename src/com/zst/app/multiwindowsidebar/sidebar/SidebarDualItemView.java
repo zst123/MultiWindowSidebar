@@ -34,8 +34,8 @@ public abstract class SidebarDualItemView extends SidebarItemView {
 				final int height = getContext().getResources().getDisplayMetrics().heightPixels;
 				final boolean landscape = width > height;
 				
-				IntentUtil.launchIntent(getContext(), intent1, landscape ? IntentUtil.SIDE_LEFT : IntentUtil.SIDE_TOP);
-				IntentUtil.launchIntent(getContext(), intent2, landscape ? IntentUtil.SIDE_RIGHT : IntentUtil.SIDE_BOTTOM);
+				IntentUtil.launchIntentDrag(getContext(), intent1, landscape ? IntentUtil.SIDE_LEFT : IntentUtil.SIDE_TOP);
+				IntentUtil.launchIntentDrag(getContext(), intent2, landscape ? IntentUtil.SIDE_RIGHT : IntentUtil.SIDE_BOTTOM);
 			} catch (NullPointerException e) {
 				Util.toast(getContext(), getResources()
 						.getString(R.string.app_launch_error) + "\n" + mPkg2 + "\n" + mPkg2);
