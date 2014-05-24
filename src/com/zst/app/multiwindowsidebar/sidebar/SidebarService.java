@@ -198,8 +198,11 @@ public class SidebarService extends Service {
 				WindowManager.LayoutParams.WRAP_CONTENT,
 				v instanceof SidebarHolderView ? WindowManager.LayoutParams.MATCH_PARENT
 						: WindowManager.LayoutParams.WRAP_CONTENT,
-				WindowManager.LayoutParams.TYPE_PHONE,
+				WindowManager.LayoutParams.TYPE_SYSTEM_ERROR,
 				WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH |
+				WindowManager.LayoutParams.FLAG_LAYOUT_INSET_DECOR |
+				WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN |
+				WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS |
 				WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE |
 				WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL,
 				PixelFormat.TRANSLUCENT);
