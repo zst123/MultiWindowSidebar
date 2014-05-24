@@ -31,6 +31,8 @@ public class SidebarService extends Service {
 	public WindowManager mWindowManager;
 	public Handler mHandler;
 	
+	private SharedPreferences main_prefs;
+	
 	// Preference Settings
 	public boolean mBarOnRight = true;
 	public int mAnimationTime;
@@ -53,12 +55,14 @@ public class SidebarService extends Service {
 		
 		if (!isSidebarShown && mHiddenSidebar == null && mShownSidebar == null) {
 			// Non-refreshable settings
-			SharedPreferences main_prefs = getSharedPreferences(Common.KEY_PREFERENCE_MAIN,
+			main_prefs = getSharedPreferences(Common.KEY_PREFERENCE_MAIN,
 					Context.MODE_PRIVATE);
 			mBarOnRight = Integer.parseInt(main_prefs.getString(Common.PREF_KEY_SIDEBAR_POSITION,
 					Common.PREF_DEF_SIDEBAR_POSITION)) == 1;
 			ThemeSetting.setTheme(Integer.parseInt(main_prefs.getString(
 					Common.PREF_KEY_SIDEBAR_THEME, Common.PREF_DEF_SIDEBAR_THEME)));
+			
+			mMargin = main_prefs.getInt(Common.PREF_KEY_SIDEBAR_MARGIN, Common.PREF_DEF_SIDEBAR_MARGIN);
 			
 			mHiddenSidebar = new SidebarHiddenView(this);
 			mShownSidebar = new SidebarHolderView(this);
@@ -74,7 +78,9 @@ public class SidebarService extends Service {
 	@SuppressWarnings("deprecation")
 	private void refreshSettings() {
 		SharedPreferences app_prefs = getSharedPreferences(Common.KEY_PREFERENCE_APPS, Context.MODE_PRIVATE);
-		SharedPreferences main_prefs = getSharedPreferences(Common.KEY_PREFERENCE_MAIN, Context.MODE_PRIVATE);
+		if (main_prefs == null) {
+			main_prefs = getSharedPreferences(Common.KEY_PREFERENCE_MAIN, Context.MODE_PRIVATE);
+		}
 		
 		mTabSize = main_prefs.getInt(Common.PREF_KEY_TAB_SIZE,
 				Common.PREF_DEF_TAB_SIZE);
@@ -146,6 +152,10 @@ public class SidebarService extends Service {
 	public void onDestroy() {
 		super.onDestroy();
 		isRunning = false;
+		
+		if (main_prefs != null && mMargin >= 0) {
+			main_prefs.edit().putInt(Common.PREF_KEY_SIDEBAR_MARGIN, mMargin).commit();
+		}
 		
 		if (isStoppable) {
 			isSidebarShown = false;
@@ -221,8 +231,8 @@ public class SidebarService extends Service {
 		}
 	}
 	
-	private int mOldMargin = 20;
-	private int mMargin = 20;
+	private int mOldMargin = Common.PREF_DEF_SIDEBAR_MARGIN;
+	private int mMargin = Common.PREF_DEF_SIDEBAR_MARGIN;
 	private float mInitialPosition;
 	private float mInitialSwipe;
 	public boolean tabTouchEvent(MotionEvent event, boolean currentlyOpen) {
