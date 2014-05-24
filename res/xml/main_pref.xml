@@ -26,7 +26,7 @@
     </PreferenceCategory>
     
     <!-- App Launch -->
-    <PreferenceCategory android:title="@string/pref_main_header" >
+    <PreferenceCategory android:title="@string/pref_launch_mode_title" >
         <ListPreference
             android:entries="@array/drag_launch_mode_entries"
             android:entryValues="@array/drag_launch_mode_values"
