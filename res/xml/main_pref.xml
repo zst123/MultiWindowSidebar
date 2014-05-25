@@ -3,11 +3,6 @@
 
     <!-- Main -->
     <PreferenceCategory android:title="@string/pref_main_header" >
-        <Preference
-            android:key="toggle_service"
-            android:summary="@string/pref_toggle_service_summary"
-            android:title="@string/pref_toggle_service_title" />
-
         <CheckBoxPreference
             android:key="keep_app_bg"
             android:defaultValue="true"

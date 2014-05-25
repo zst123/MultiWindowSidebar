@@ -12,7 +12,6 @@ import com.zst.app.multiwindowsidebar.IntentUtil;
 import com.zst.app.multiwindowsidebar.R;
 import com.zst.app.multiwindowsidebar.Util;
 import com.zst.app.multiwindowsidebar.adapter.AppListActivity;
-import com.zst.app.multiwindowsidebar.sidebar.SidebarService;
 
 public class MainPrefFragment extends PreferenceFragment implements OnPreferenceClickListener,
 		OnPreferenceChangeListener {
@@ -24,7 +23,6 @@ public class MainPrefFragment extends PreferenceFragment implements OnPreference
 		addPreferencesFromResource(R.xml.main_pref);
 		
 		// Click
-		findPreference(Common.PREF_KEY_TOGGLE_SERVICE).setOnPreferenceClickListener(this);
 		findPreference(Common.PREF_KEY_SELECT_APPS).setOnPreferenceClickListener(this);
 		
 		// Change
@@ -40,13 +38,6 @@ public class MainPrefFragment extends PreferenceFragment implements OnPreference
 		String k = p.getKey();
 		if (k.equals(Common.PREF_KEY_SELECT_APPS)) {
 			getActivity().startActivity(new Intent(getActivity(), AppListActivity.class));
-			return true;
-		} else if (k.equals(Common.PREF_KEY_TOGGLE_SERVICE)) {
-			if (SidebarService.isRunning) {
-				SidebarService.stopSidebar(getActivity());
-			} else {
-				getActivity().startService(new Intent(getActivity(), SidebarService.class));
-			}
 			return true;
 		}
 		return false;

@@ -1,14 +1,20 @@
 package com.zst.app.multiwindowsidebar;
 
 import com.zst.app.multiwindowsidebar.preference.*;
+import com.zst.app.multiwindowsidebar.sidebar.SidebarService;
+
 import android.os.Bundle;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Intent;
 
 public class MainActivity extends Activity {
+	public static final int MENU_TOGGLE = 1;
 		
 	public enum PAGES {
 		MAIN(0),
@@ -66,5 +72,29 @@ public class MainActivity extends Activity {
 			}
 			return "?";
 		}
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		menu.add(Menu.NONE, MENU_TOGGLE, 0, R.string.pref_toggle_service_title)
+			.setIcon(SidebarService.isRunning ?
+					R.drawable.ic_menu_toggle_off : R.drawable.ic_menu_toggle_on)
+			.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case MENU_TOGGLE:
+			if (SidebarService.isRunning) {
+				SidebarService.stopSidebar(this);
+				item.setIcon(R.drawable.ic_menu_toggle_on);
+			} else {
+				startService(new Intent(this, SidebarService.class));
+				item.setIcon(R.drawable.ic_menu_toggle_off);
+			}
+		}
+		return super.onOptionsItemSelected(item);
 	}
 }

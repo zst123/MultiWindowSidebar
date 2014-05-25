@@ -23,7 +23,6 @@ public class Common {
 	public static final String KEY_PREFERENCE_APPS = "apps_pref";
 	
 	// Preference keys & default values
-	public static final String PREF_KEY_TOGGLE_SERVICE = "toggle_service";
 	public static final String PREF_KEY_SELECT_APPS = "select_apps";
 	public static final String PREF_KEY_KEEP_IN_BG = "keep_app_bg";
 	public static final boolean PREF_DEF_KEEP_IN_BG = true;
