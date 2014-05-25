@@ -99,7 +99,6 @@ public class SidebarDraggedOutView extends ImageView {
 		paramz.gravity = outline_param[2];
 		paramz.width = outline_param[0];
 		paramz.height = outline_param[1];
-		// TODO add in reflection param.privateFlags |= 0x00000040; //PRIVATE_FLAG_NO_MOVE_ANIMATION
 		try {
 			mWindowManager.updateViewLayout(mOutlineView, paramz);
 		} catch (Exception e) {

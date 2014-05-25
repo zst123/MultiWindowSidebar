@@ -226,7 +226,7 @@ public class SidebarHolderView extends LinearLayout {
 								layout.addView(item);
 							}
 						}
-						mHolderView.addView(layout);			
+						mHolderView.addView(layout);
 					}
 				}
 			}
@@ -348,9 +348,9 @@ public class SidebarHolderView extends LinearLayout {
 	public boolean setReceiveAllTouchEvents(boolean yes) {
 		WindowManager.LayoutParams param = (WindowManager.LayoutParams) getLayoutParams();
 		if (yes) {
-	        param.flags = param.flags & ~WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
+			param.flags = param.flags & ~WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
 		} else {
-	        param.flags = param.flags | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
+			param.flags = param.flags | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
 		}
 		try {
 			mService.mWindowManager.updateViewLayout(this, param);

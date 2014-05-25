@@ -112,9 +112,9 @@ public class SidebarService extends Service {
 			PendingIntent intent = PendingIntent.getActivity(this, 0,
 					new Intent(this, MainActivity.class), 0);
 			Notification.Builder n  = new Notification.Builder(this)
-	        .setContentTitle(getResources().getText(R.string.app_name_running))
-	        .setSmallIcon(R.drawable.transparent)
-	        .setContentIntent(intent);
+				.setContentTitle(getResources().getText(R.string.app_name_running))
+				.setSmallIcon(R.drawable.transparent)
+				.setContentIntent(intent);
 			
 			if (Build.VERSION.SDK_INT >= 16) {
 				n.setPriority(Notification.PRIORITY_MIN);

@@ -82,7 +82,6 @@ public abstract class SidebarItemView extends LinearLayout {
         setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				// TODO option to disable click
 				if (!isLongPressVerified)
 					// if it's a long press & not a click, we shouldn't launch
 					tappedApp();

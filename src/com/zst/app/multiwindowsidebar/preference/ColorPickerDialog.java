@@ -83,7 +83,7 @@ public class ColorPickerDialog extends Preference implements OnPreferenceClickLi
 		d.show();
 		return true;
 	}
-			
+	
 	public String getColorString() {
 		return Integer.toHexString(getColor());
 	}

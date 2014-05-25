@@ -137,7 +137,7 @@ public class AppListActivity extends Activity {
 			x++;
 		}
 		editor.commit();
-		updateList();		
+		updateList();
 	}
 	
 	public void updateList() {

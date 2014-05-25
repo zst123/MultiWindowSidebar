@@ -34,7 +34,7 @@ public class WindowPositionOutline {
 			final boolean landscape = screen_width > screen_height;
 			if (landscape) {
 				outline_param[0] = (int) (screen_width * 0.7f);
-				outline_param[1] = (int) (screen_height * 0.8f);				
+				outline_param[1] = (int) (screen_height * 0.8f);
 			} else {
 				outline_param[0] = (int) (screen_width * 0.9f);
 				outline_param[1] = (int) (screen_height * 0.7f);
@@ -81,7 +81,7 @@ public class WindowPositionOutline {
 			return IntentUtil.SIDE_PA_HALO;
 		case IntentUtil.DragMode.NONE:
 		default:
-			break; 
+			break;
 		}
 		return IntentUtil.SIDE_FULLSCREEN;
 	}

@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
 	// Thanks: http://stackoverflow.com/questions/15845632/adding-preferencefragment-to-fragmentpageradapter
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);		
+		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_viewpager);
 		// Display the fragment as the main content.
 		

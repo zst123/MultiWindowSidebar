@@ -30,7 +30,7 @@ public abstract class SidebarDualItemView extends SidebarItemView {
 				final Intent intent1 = new Intent(pm.getLaunchIntentForPackage(mPkg1));
 				final Intent intent2 = new Intent(pm.getLaunchIntentForPackage(mPkg2));
 
-				final int width = getContext().getResources().getDisplayMetrics().widthPixels;				
+				final int width = getContext().getResources().getDisplayMetrics().widthPixels;
 				final int height = getContext().getResources().getDisplayMetrics().heightPixels;
 				final boolean landscape = width > height;
 				

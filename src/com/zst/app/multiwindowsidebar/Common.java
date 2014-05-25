@@ -24,10 +24,13 @@ public class Common {
 	
 	// Preference keys & default values
 	public static final String PREF_KEY_SELECT_APPS = "select_apps";
+	
 	public static final String PREF_KEY_KEEP_IN_BG = "keep_app_bg";
 	public static final boolean PREF_DEF_KEEP_IN_BG = true;
+	
 	public static final String PREF_KEY_START_ON_BOOT = "start_on_boot";
 	public static final boolean PREF_DEF_START_ON_BOOT = false;
+	
 	public static final String PREF_KEY_SIDEBAR_POSITION = "sidebar_position";
 	public static final String PREF_DEF_SIDEBAR_POSITION = "0";
 	
@@ -39,16 +42,22 @@ public class Common {
 	
 	public static final String PREF_KEY_TAB_ALPHA_HIDDEN = "tab_alpha_hidden";
 	public static final int PREF_DEF_TAB_ALPHA_HIDDEN = 100;
+	
 	public static final String PREF_KEY_TAB_SIZE = "tab_size";
 	public static final int PREF_DEF_TAB_SIZE = 32;
+	
 	public static final String PREF_KEY_LABEL_SIZE = "label_size";
 	public static final int PREF_DEF_LABEL_SIZE = 14;
+	
 	public static final String PREF_KEY_LABEL_COLOR = "label_color";
 	public static final String PREF_DEF_LABEL_COLOR = "FF000000";
+	
 	public static final String PREF_KEY_COLUMN_NUMBER = "column_number";
 	public static final int PREF_DEF_COLUMN_NUMBER = 1;
+	
 	public static final String PREF_KEY_ANIM_TIME = "animation_time";
 	public static final int PREF_DEF_ANIM_TIME = 300;
+	
 	public static final String PREF_KEY_SIDEBAR_THEME = "sidebar_theme";
 	public static final String PREF_DEF_SIDEBAR_THEME = "0";
 	
