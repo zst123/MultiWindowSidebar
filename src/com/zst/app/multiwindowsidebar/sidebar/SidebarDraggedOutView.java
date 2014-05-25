@@ -163,7 +163,7 @@ public class SidebarDraggedOutView extends ImageView {
 		return new WindowManager.LayoutParams(
 				Util.dp(48, getContext()),
 				Util.dp(48, getContext()),
-				WindowManager.LayoutParams.TYPE_PHONE,
+				WindowManager.LayoutParams.TYPE_SYSTEM_ERROR,
 				WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH |
 				WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE |
 				WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE |
