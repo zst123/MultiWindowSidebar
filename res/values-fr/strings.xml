@@ -34,9 +34,9 @@
     <string name="pref_keep_app_bg_summary">Empêcher le système de tuer la barre latérale en cas de très peu de mémoire en affichant une notification</string>
     
     <string name="pref_launch_mode_title">Mode de lancement</string>
-    <string name="pref_drag_launch_mode_title">Mode de lancement en glissant</string>
+    <string name="pref_drag_launch_mode_title">Lancer en glissant</string>
     <string name="pref_drag_launch_mode_summary">Lancer une application en glissant hors de la barre latérale</string>
-    <string name="pref_tap_launch_mode_title">Mode de lancement en appuyant</string>
+    <string name="pref_tap_launch_mode_title">Lancer en appuyant</string>
     <string name="pref_tap_launch_mode_summary">Lancer une application en appuyant à l\'intérieur de la barre latérale</string>    
     
     <string name="pref_launch_mode_normally">Par défaut (lancement normal)</string>
@@ -62,7 +62,7 @@
     <string name="pref_sidebar_position_title">Position de la barre latérale</string>
     <string name="pref_sidebar_position_summary">Sélectionner où afficher la barre latérale à l\'écran</string>
     <string name="pref_sidebar_theme_title">Thème de la barre latérale</string>
-    <string name="pref_sidebar_theme_summary">Sélectionner l\'apparence visuelle de la barre latérale</string>
+    <string name="pref_sidebar_theme_summary">Modifier l\'apparence visuelle de la barre latérale</string>
     <string name="pref_tab_alpha_hidden_title">Transparence de l\'onglet</string>
     <string name="pref_tab_alpha_hidden_summary">Transparence de l\'onglet quand la barre latérale est masquée</string>    
     <string name="pref_tab_size_title">Taille de l\'onglet</string>
