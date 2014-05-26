@@ -308,7 +308,16 @@ public class SidebarHolderView extends LinearLayout {
 	final Runnable runnable = new Runnable () {
 		@Override
 		public void run() {
-			mService.hideBar();
+			try {
+				mService.hideBar();
+			} catch (NullPointerException e) {
+				/*
+				 * When you stop the service while the sidebar is
+				 * left open, the handler would still run this
+				 * after the delay. Thus, mService would be dead by
+				 * then and cause a NPE.
+				 */
+			}
 		}
 	};
 	
