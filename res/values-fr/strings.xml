@@ -34,10 +34,22 @@
     <string name="pref_keep_app_bg_summary">Empêcher le système de tuer la barre latérale en cas de très peu de mémoire en affichant une notification</string>
     
     <string name="pref_launch_mode_title">Mode de lancement</string>
-    <string name="pref_launch_mode_summary">Choisir le mode de lancement des applications</string>
+    <string name="pref_drag_launch_mode_title">Mode de lancement en glissant</string>
+    <string name="pref_drag_launch_mode_summary">Lancer une application en glissant hors de la barre latérale</string>
+    <string name="pref_tap_launch_mode_title">Mode de lancement en appuyant</string>
+    <string name="pref_tap_launch_mode_summary">Lancer une application en appuyant à l\'intérieur de la barre latérale</string>    
+    
     <string name="pref_launch_mode_normally">Par défaut (lancement normal)</string>
     <string name="pref_launch_mode_pa_halo">ParanoidAndroid Halo</string>
-    <string name="pref_launch_mode_xhfw">XHaloFloatingWindow</string>
+    <string name="pref_launch_mode_xhfw_p">XHaloFloatingWindow (Portrait)</string>
+    <string name="pref_launch_mode_xhfw_l">XHaloFloatingWindow (Paysage)</string>
+    <string name="pref_launch_mode_xhfw_center">XHaloFloatingWindow (Centre)</string>
+    <string name="pref_launch_mode_xhfw_top">XHaloFloatingWindow (Haut)</string>
+    <string name="pref_launch_mode_xhfw_bottom">XHaloFloatingWindow (Bas)</string>
+    <string name="pref_launch_mode_xhfw_left">XHaloFloatingWindow (Gauche)</string>
+    <string name="pref_launch_mode_xhfw_right">XHaloFloatingWindow (Droite)</string>
+    <string name="pref_launch_mode_xmw_top">XMultiWindow (Haut)</string>
+    <string name="pref_launch_mode_xmw_bottom">XMultiWindow (Bas)</string>
     <string name="pref_launch_mode_xmw">XMultiWindow</string>
     <string name="pref_launch_mode_error_xhfw">XHaloFloatingWindow n\'est pas installé.\nCe mode de lancement ne fonctionnera pas sans cela.</string>
     <string name="pref_launch_mode_error_xmw">XMultiWindow n\'est pas installé.\nCe mode de lancement ne fonctionnera pas sans cela.</string>
@@ -50,7 +62,9 @@
     <string name="pref_sidebar_position_title">Position de la barre latérale</string>
     <string name="pref_sidebar_position_summary">Sélectionner où afficher la barre latérale à l\'écran</string>
     <string name="pref_sidebar_theme_title">Thème de la barre latérale</string>
-    <string name="pref_sidebar_theme_summary">Sélectionner l\'apparence visuelle de la barre latérale</string>   
+    <string name="pref_sidebar_theme_summary">Sélectionner l\'apparence visuelle de la barre latérale</string>
+    <string name="pref_tab_alpha_hidden_title">Transparence de l\'onglet</string>
+    <string name="pref_tab_alpha_hidden_summary">Transparence de l\'onglet quand la barre latérale est masquée</string>    
     <string name="pref_tab_size_title">Taille de l\'onglet</string>
     <string name="pref_tab_size_summary">Taille de l\'onglet de la barre latérale</string>
     <string name="pref_label_size_title">Taille des libellés</string>
@@ -58,7 +72,7 @@
     <string name="pref_label_color_title">Couleur des libellés</string>
     <string name="pref_label_color_summary">Couleur du nom des applications</string>
     <string name="pref_column_number_title">Nombre de colonnes</string>
-    <string name="pref_column_number_summary">Nombre de colonnes d\'icône pour chaque ligne dans la barre latérale</string>    
+    <string name="pref_column_number_summary">Nombre de colonnes d\'icônes dans la barre latérale</string>    
     <string name="pref_animation_time_title">Vitesse d\'animation</string>
     <string name="pref_animation_time_summary">Vitesse d\'ouverture de la barre latérale</string>
     
