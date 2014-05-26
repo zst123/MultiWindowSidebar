@@ -2,7 +2,6 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <!-- Main -->
-    <PreferenceCategory android:title="@string/pref_main_header" >
         <CheckBoxPreference
             android:key="keep_app_bg"
             android:defaultValue="true"
@@ -18,7 +17,6 @@
             android:key="select_apps"
             android:summary="@string/pref_select_app_summary"
             android:title="@string/pref_select_app_title" />
-    </PreferenceCategory>
     
     <!-- App Launch -->
     <PreferenceCategory android:title="@string/pref_launch_mode_title" >
