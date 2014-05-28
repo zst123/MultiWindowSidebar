@@ -59,9 +59,9 @@ public class WindowPositionOutline {
 		boolean landscape = screen_width > screen_height;
 		
 		switch (IntentUtil.sLaunchModeDrag) {
-		case IntentUtil.DragMode.XMULTI_WINDOW:
 		case IntentUtil.DragMode.XHFW_LANDSCAPE:
 			landscape = !landscape;
+		case IntentUtil.DragMode.XMULTI_WINDOW:
 		case IntentUtil.DragMode.XHFW_PORTRAIT:
 			if (landscape) {
 				if (x < (screen_width / 2)) {
