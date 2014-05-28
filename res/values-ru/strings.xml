@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Main -->
+    <string name="app_name">MultiWindowSidebar</string>
+    <string name="app_name_toggle">Запуск/остановка MultiWindowSidebar</string>
+    <string name="app_name_running">MultiWindowSidebar запущен</string>
+    
+    <!-- Generic Strings -->
+    <string name="left">Слева</string>
+    <string name="right">Справа</string>
+    <string name="add_app">Добавить приложение</string>
+    <string name="group">Группа</string>
+    <string name="settings_default">По умолчанию</string>
+    <string name="apply">Принять</string>
+    <string name="color_hex">Цвет</string>
+    
+    <!-- Creating Group -->
+    <string name="create_group">Создать группу</string>
+    <string name="create_group_done">Группа создана</string>
+    <string name="create_group_empty1">Первое приложение не указано.</string>
+    <string name="create_group_empty2">Второе приложение не указано.</string>
+    <string name="create_group_warning">Примечание: Группы работают корректно только с XHaloFloatingWindow или XMultiWindow.</string>
+    <string name="create_group_from_service">Приложения определены автоматически. Подтвердите сохранение.</string>
+    <string name="create_group_first">Первое приложение\n(открывается сверху или слева)</string>
+    <string name="create_group_second">Второе приложение\n(открывается снизу или справа)</string>
+    
+    <!-- Preference / Main -->
+    <string name="pref_main_header">Основное</string>
+    <string name="pref_toggle_service_title">Запуск/остановка сервиса</string>
+    <string name="pref_toggle_service_summary">Показать или скрыть панель</string>
+    <string name="pref_start_on_boot_title">Автозагрузка</string>
+    <string name="pref_start_on_boot_summary">Автоматический запуск после загрузки устройства</string>
+    <string name="pref_keep_app_bg_title">Держать сервис запущенным</string>
+    <string name="pref_keep_app_bg_summary">Постоянное уведомление для предотвращения закрытия панели при недостатке оперативной памяти</string>
+    
+    <string name="pref_launch_mode_title">Способ запуска</string>
+    <string name="pref_drag_launch_mode_title">Запуск при перетаскивании</string>
+    <string name="pref_drag_launch_mode_summary">Способ запуска приложения при вытаскивании иконки из панели</string>
+    <string name="pref_tap_launch_mode_title">Запуск при нажатии</string>
+    <string name="pref_tap_launch_mode_summary">Способ запуска приложения при нажатии на иконку</string>
+    
+    <!-- Modes -->
+    <string name="pref_launch_mode_normally">По умолчанию (обычный запуск)</string>
+    <string name="pref_launch_mode_pa_halo">ParanoidAndroid Halo</string>
+    <string name="pref_launch_mode_xhfw_p">XHaloFloatingWindow (портретная ориентация)</string>
+    <string name="pref_launch_mode_xhfw_l">XHaloFloatingWindow (ландшафтная ориентация)</string>
+    <string name="pref_launch_mode_xhfw_center">XHaloFloatingWindow (центр)</string>
+    <string name="pref_launch_mode_xhfw_top">XHaloFloatingWindow (вверху)</string>
+    <string name="pref_launch_mode_xhfw_bottom">XHaloFloatingWindow (внизу)</string>
+    <string name="pref_launch_mode_xhfw_left">XHaloFloatingWindow (слева)</string>
+    <string name="pref_launch_mode_xhfw_right">XHaloFloatingWindow (справа)</string>
+    <string name="pref_launch_mode_xmw_top">XMultiWindow (вверху)</string>
+    <string name="pref_launch_mode_xmw_bottom">XMultiWindow (внизу)</string>
+    <string name="pref_launch_mode_xmw">XMultiWindow</string>
+    <string name="pref_launch_mode_error_xhfw">XHaloFloatingWindow не установлен.\nДанный режим запуска не будет работать без него.</string>
+    <string name="pref_launch_mode_error_xmw">XMultiWindow не установлен.\nДанный режим запуска не будет работать без него.</string>
+    
+    <string name="pref_select_app_title">Выбор приложений</string>
+    <string name="pref_select_app_summary">Список приложений, доступных в боковой панели</string>
+    
+    <!-- Preference / Appearence -->
+    <string name="pref_appearance_header">Внешний вид</string>
+    <string name="pref_sidebar_position_title">Расположение панели</string>
+    <string name="pref_sidebar_position_summary">С какой стороны отображается панель</string>
+    <string name="pref_sidebar_theme_title">Тема</string>
+    <string name="pref_sidebar_theme_summary">Выбор темы оформления панели</string>
+    <string name="pref_tab_alpha_hidden_title">Прозрачность</string>
+    <string name="pref_tab_alpha_hidden_summary">Прозрачность панели в закрытом состоянии</string>
+    <string name="pref_tab_size_title">Размер края</string>
+    <string name="pref_tab_size_summary">Размер края панели в DP</string>
+    <string name="pref_label_size_title">Размер подписей</string>
+    <string name="pref_label_size_summary">Размер названий приложений в SP</string>
+    <string name="pref_label_color_title">Цвет подписей</string>
+    <string name="pref_label_color_summary">Цвет названий приложений</string>
+    <string name="pref_column_number_title">Количество столбцов</string>
+    <string name="pref_column_number_summary">Количество столбцов иконок приложений</string>
+    <string name="pref_animation_time_title">Скорость анимации</string>
+    <string name="pref_animation_time_summary">Скорость появления и исчезновения панели</string>
+    
+    <!-- Service -->
+    <string name="app_list_empty">Список приложений пуст.\nДобавьте приложения в настройках.</string>
+    <string name="app_launch_error">Ошибка запуска приложения:\n</string>
+    
+    <!-- Themes -->
+    <string name="theme_default">По умолчанию (Note 3)\nот Samsung</string>
+    <string name="theme_inverted">Инвертированная Note 3\nот foreverloco@XDA</string>
+
+    <!-- Do not translate -->
+    <string name="arrow_symbol">➙</string>
+
+</resources>
