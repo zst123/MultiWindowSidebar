@@ -17,11 +17,11 @@ public class AppearencePrefFragment extends PreferenceFragment {
 		addPreferencesFromResource(R.xml.appearence_pref);
 		
 		// Reset Change Listener
-		findPreference(Common.PREF_KEY_SIDEBAR_POSITION).setOnPreferenceChangeListener(sRefreshChangeListener);
 		findPreference(Common.PREF_KEY_SIDEBAR_THEME).setOnPreferenceChangeListener(sResetChangeListener);
 		findPreference(Common.PREF_KEY_ANIM_TIME).setOnPreferenceChangeListener(sResetChangeListener);
 		
 		// Refresh Change Listener
+		findPreference(Common.PREF_KEY_SIDEBAR_POSITION).setOnPreferenceChangeListener(sRefreshChangeListener);
 		findPreference(Common.PREF_KEY_TAB_SIZE).setOnPreferenceChangeListener(sRefreshChangeListener);
 		findPreference(Common.PREF_KEY_LABEL_SIZE).setOnPreferenceChangeListener(sRefreshChangeListener);
 		findPreference(Common.PREF_KEY_TAB_ALPHA_HIDDEN).setOnPreferenceChangeListener(sRefreshChangeListener);
