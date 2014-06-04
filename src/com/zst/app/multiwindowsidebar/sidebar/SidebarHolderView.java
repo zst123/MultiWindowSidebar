@@ -133,13 +133,17 @@ public class SidebarHolderView extends LinearLayout {
 			}
 			
 			private boolean moveRangeAboveLimit(MotionEvent event) {
-				final int range = Util.dp(8, getContext());
+				boolean returnVal = false;
+				final int range = Util.dp(24, getContext());
 				if (Math.abs(previous_touch[0] - event.getRawX()) > range)
-					return true;
+					returnVal = true;
 				if (Math.abs(previous_touch[1] - event.getRawY()) > range)
-					return true;
-
-				return false;
+					returnVal = true;
+				
+				previous_touch[0] = event.getRawX();
+				previous_touch[1] = event.getRawY();
+				
+				return returnVal;
 			}
 		});
 	}
