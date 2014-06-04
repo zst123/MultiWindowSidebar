@@ -17,7 +17,7 @@ public class AppearencePrefFragment extends PreferenceFragment {
 		addPreferencesFromResource(R.xml.appearence_pref);
 		
 		// Reset Change Listener
-		findPreference(Common.PREF_KEY_SIDEBAR_POSITION).setOnPreferenceChangeListener(sResetChangeListener);
+		findPreference(Common.PREF_KEY_SIDEBAR_POSITION).setOnPreferenceChangeListener(sRefreshChangeListener);
 		findPreference(Common.PREF_KEY_SIDEBAR_THEME).setOnPreferenceChangeListener(sResetChangeListener);
 		findPreference(Common.PREF_KEY_ANIM_TIME).setOnPreferenceChangeListener(sResetChangeListener);
 		

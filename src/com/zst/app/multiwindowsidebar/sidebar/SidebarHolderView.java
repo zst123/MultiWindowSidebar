@@ -38,7 +38,7 @@ public class SidebarHolderView extends LinearLayout {
 	private final RelativeLayout mContentView;
 	private final LinearLayout mHolderView;
 	private final RelativeLayout mBarView;
-	private final ImageView mTabView;
+	private ImageView mTabView;
 	private SidebarItemView[] mItemViews;
 	
 	
@@ -86,15 +86,22 @@ public class SidebarHolderView extends LinearLayout {
 		iv_create_group.setImageResource(ThemeSetting.getDrawableResId(ThemeSetting.IC_MENU_CREATE_GROUP));
 		iv_edit.setImageResource(ThemeSetting.getDrawableResId(ThemeSetting.IC_MENU_EDIT));
 		
+	}
+	
+	public void refreshBarSide() {
+		View leftTab = findViewById(android.R.id.button1);
+		View rightTab = findViewById(android.R.id.button2);
 		if (mService.mBarOnRight) {
 			mBarView.setBackgroundResource(ThemeSetting.getDrawableResId(ThemeSetting.BACKGROUND_RIGHT));
-			findViewById(android.R.id.button2).setVisibility(View.GONE);
-			mTabView = (ImageView) findViewById(android.R.id.button1);
+			rightTab.setVisibility(View.GONE);
+			leftTab.setVisibility(View.VISIBLE);
+			mTabView = (ImageView) leftTab;
 			mTabView.setImageResource(ThemeSetting.getDrawableResId(ThemeSetting.TAB_RIGHT_SHOWN));
 		} else {
 			mBarView.setBackgroundResource(ThemeSetting.getDrawableResId(ThemeSetting.BACKGROUND_LEFT));
-			findViewById(android.R.id.button1).setVisibility(View.GONE);
-			mTabView = (ImageView) findViewById(android.R.id.button2);
+			leftTab.setVisibility(View.GONE);
+			rightTab.setVisibility(View.VISIBLE);
+			mTabView = (ImageView) rightTab;
 			mTabView.setImageResource(ThemeSetting.getDrawableResId(ThemeSetting.TAB_LEFT_SHOWN));
 		}
 		mTabView.setOnTouchListener(new View.OnTouchListener() {

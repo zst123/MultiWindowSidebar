@@ -23,7 +23,9 @@ public class SidebarHiddenView extends LinearLayout {
 		mService = service;
 		LayoutInflater.from(service).inflate(R.layout.sidebar_hidden, this);
 		mTab = (ImageView) findViewById(android.R.id.button1);
-		
+	}
+	
+	public void refreshBarSide() {
 		if (mService.mBarOnRight) {
 			mTab.setImageResource(ThemeSetting.getDrawableResId(ThemeSetting.TAB_RIGHT_HIDDEN));
 		} else {
