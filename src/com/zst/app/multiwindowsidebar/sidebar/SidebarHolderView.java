@@ -105,12 +105,15 @@ public class SidebarHolderView extends LinearLayout {
 			mTabView.setImageResource(ThemeSetting.getDrawableResId(ThemeSetting.TAB_LEFT_SHOWN));
 		}
 		mTabView.setOnTouchListener(new View.OnTouchListener() {
+			float[] previous_touch = new float[2];
 			boolean click;
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 			switch (event.getActionMasked()) {
 			case MotionEvent.ACTION_MOVE:
-				click = false;
+				if (moveRangeAboveLimit(event)) {
+					click = false;
+				}
 				break;
 			case MotionEvent.ACTION_DOWN:
 				mTabView.setImageState(new int[] { android.R.attr.state_pressed }, false);
@@ -127,6 +130,16 @@ public class SidebarHolderView extends LinearLayout {
 			}
 			mService.tabTouchEvent(event, true);	
 			return true;
+			}
+			
+			private boolean moveRangeAboveLimit(MotionEvent event) {
+				final int range = Util.dp(8, getContext());
+				if (Math.abs(previous_touch[0] - event.getRawX()) > range)
+					return true;
+				if (Math.abs(previous_touch[1] - event.getRawY()) > range)
+					return true;
+
+				return false;
 			}
 		});
 	}
