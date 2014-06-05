@@ -18,6 +18,9 @@ public class SidebarHiddenView extends LinearLayout {
 	final SidebarService mService;
 	final ImageView mTab;
 	
+	float mPreviousXTouch;
+	float mPreviousYTouch;
+	
 	public SidebarHiddenView(SidebarService service) {
 		super(service);
 		mService = service;
@@ -93,17 +96,43 @@ public class SidebarHiddenView extends LinearLayout {
 	public boolean onTouchEvent(MotionEvent event) {
 		switch (event.getActionMasked()) {
 		case MotionEvent.ACTION_DOWN:
-			mService.mHandler.postDelayed(runnable, 200);
+			mService.mHandler.postDelayed(runnable, 300);
+			mPreviousXTouch = event.getRawX();
+			mPreviousYTouch = event.getRawY();
+			mService.tabTouchEvent(event, false);
 			mTab.setImageState(new int[] { android.R.attr.state_pressed }, false);
 			break;
 		case MotionEvent.ACTION_UP:
 		case MotionEvent.ACTION_CANCEL:
+			mPreviousYTouch = event.getRawY();
 			mTab.setImageState(new int[] { android.R.attr.state_empty }, false);
 			break;
 		}
-		if (mService.tabTouchEvent(event, false)) {
-			mService.mHandler.removeCallbacks(runnable);
-		};
+		if (mPreviousYTouch == -1 || moveRangeAboveLimit(event)) {
+			if (mService.tabTouchEvent(event, false)) {
+				mService.mHandler.removeCallbacks(runnable);
+			}
+		}
+		;
 		return true;
+	}
+	
+	private boolean moveRangeAboveLimit(MotionEvent event) {
+		if (Math.abs(mPreviousXTouch - event.getRawX()) > Util.dp(64, getContext())) {
+			// user is swiping out, don't move tab
+			return false;
+		}
+		
+		final int range = Util.dp(16, getContext());
+		boolean returnVal = false;
+		
+		if (Math.abs(mPreviousYTouch - event.getRawY()) > range) {
+			returnVal = true;
+		}
+		
+		if (returnVal) {
+			mPreviousYTouch = -1;
+		}
+		return returnVal;
 	}
 }
