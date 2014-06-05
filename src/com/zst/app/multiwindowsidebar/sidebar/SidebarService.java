@@ -66,7 +66,7 @@ public class SidebarService extends Service {
 			mShownSidebar = new SidebarHolderView(this);
 			isSidebarShown = true;
 			
-			refreshSettings(false);
+			refreshSettings();
 			
 			hideBar();
 		}
@@ -74,16 +74,21 @@ public class SidebarService extends Service {
 	
 	// All the refreshable settings go here
 	@SuppressWarnings("deprecation")
-	public void refreshSettings(boolean fromUser) {
+	public void refreshSettings() {
 		SharedPreferences app_prefs = getSharedPreferences(Common.KEY_PREFERENCE_APPS, Context.MODE_PRIVATE);
 		if (main_prefs == null) {
 			main_prefs = getSharedPreferences(Common.KEY_PREFERENCE_MAIN, Context.MODE_PRIVATE);
 		}
 		
-		mBarOnRight = Integer.parseInt(main_prefs.getString(Common.PREF_KEY_SIDEBAR_POSITION,
+		boolean bar_on_right = Integer.parseInt(main_prefs.getString(Common.PREF_KEY_SIDEBAR_POSITION,
 				Common.PREF_DEF_SIDEBAR_POSITION)) == 1;
-		mHiddenSidebar.refreshBarSide();
-		mShownSidebar.refreshBarSide();
+		if (mBarOnRight != bar_on_right) {
+			mBarOnRight = bar_on_right;
+			mHiddenSidebar.refreshBarSide();
+			mShownSidebar.refreshBarSide();
+			killBars();
+			hideBar();
+		}
 		
 		mTabSize = main_prefs.getInt(Common.PREF_KEY_TAB_SIZE,
 				Common.PREF_DEF_TAB_SIZE);
@@ -136,11 +141,6 @@ public class SidebarService extends Service {
 		//TODO add option for customizing each column width
 		
 		mShownSidebar.addApps(app_prefs, getPackageManager());
-		
-		if (fromUser) {
-			killBars();
-			hideBar();
-		}
 	}
 	
 	@Override
@@ -151,7 +151,7 @@ public class SidebarService extends Service {
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		super.onStartCommand(intent, flags, startId);
 		if (intent != null && intent.getBooleanExtra(Common.EXTRA_REFRESH_SERVICE, false)) {
-			refreshSettings(true);
+			refreshSettings();
 		}
 		return START_STICKY;
 	}
