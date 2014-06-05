@@ -52,11 +52,13 @@
         <item>@string/theme_default</item>
         <item>@string/theme_inverted</item>
         <item>@string/theme_s4</item>
+        <item>@string/theme_s5</item>
     </string-array>
     <string-array name="sidebar_theme_values">
         <item>1</item>
         <item>2</item>
         <item>3</item>
+        <item>4</item>
     </string-array>
 
 </resources>

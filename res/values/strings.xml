@@ -85,6 +85,7 @@
     <string name="theme_default">Default (Original Note 3)\nby Samsung</string>
     <string name="theme_inverted">Inverted Note 3\nby foreverloco@XDA</string>
     <string name="theme_s4">Galaxy S4\nby Samsung</string>
+    <string name="theme_s5">Galaxy S5\nby Samsung</string>
 
     <!-- Do not translate -->
     <string name="arrow_symbol">➙</string>

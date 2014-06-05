@@ -14,45 +14,53 @@ public class ThemeSetting {
 		R.drawable.bg_left,
 		R.drawable.inverted_bg_left,
 		R.drawable.s4_bg_left,
+		R.drawable.s5_bg_left,
 	};
 	
 	public static final int[] BACKGROUND_RIGHT = { 0xA2,
 		R.drawable.bg_right,
 		R.drawable.inverted_bg_right,
 		R.drawable.s4_bg_right,
+		R.drawable.s5_bg_right,
 	};
 	
 	public static final int[] TAB_SIDE_MARGIN = { 0xB0,
 		0,
 		0,
 		-4,
+		-6,
 	};
 	
 	public static final int[] TAB_LEFT_HIDDEN = { 0xB1,
 		R.drawable.tab_left_hidden_selector,
 		R.drawable.inverted_tab_left_hidden,
 		R.drawable.s4_tab_left_hidden,
+		R.drawable.tab_left_hidden_selector,
 	};
 	
 	public static final int[] TAB_LEFT_SHOWN = { 0xB2,
 		R.drawable.tab_left_show_selector,
 		R.drawable.inverted_tab_left_show,
 		R.drawable.s4_tab_left_shown,
+		R.drawable.tab_left_show_selector,
 	};
 	
 	public static final int[] TAB_RIGHT_HIDDEN = { 0xB3,
 		R.drawable.tab_right_hidden_selector,
 		R.drawable.inverted_tab_right_hidden,
 		R.drawable.s4_tab_right_hidden,
+		R.drawable.tab_right_hidden_selector,
 	};
 	
 	public static final int[] TAB_RIGHT_SHOWN = { 0xB4,
 		R.drawable.tab_right_show_selector, 
 		R.drawable.inverted_tab_right_show,
 		R.drawable.s4_tab_right_shown,
+		R.drawable.tab_right_show_selector,
 	};
 	
 	public static final int[] IC_EMPTY_ICON = { 0xC1,
+		R.drawable.ic_empty_icon,
 		R.drawable.ic_empty_icon,
 		R.drawable.ic_empty_icon,
 		R.drawable.ic_empty_icon,
@@ -62,17 +70,20 @@ public class ThemeSetting {
 		R.drawable.ic_menu_create_group,
 		R.drawable.inverted_ic_menu_create_group,
 		R.drawable.ic_menu_create_group,
+		R.drawable.ic_menu_create_group,
 	};
 	
 	public static final int[] IC_MENU_EDIT = { 0xC3,
 		R.drawable.ic_menu_edit,
 		R.drawable.inverted_ic_menu_edit,
 		R.drawable.ic_menu_edit,
+		R.drawable.ic_menu_edit,
 	};
 	
 	public static final int[] IC_MORE_BUTTON = { 0xC4,
 		R.drawable.ic_more,
 		R.drawable.inverted_ic_more,
+		R.drawable.ic_more,
 		R.drawable.ic_more,
 	};
 	
@@ -81,6 +92,7 @@ public class ThemeSetting {
 	public static final int THEME_ORIGINAL = 1;
 	public static final int THEME_INVERTED = 2;
 	public static final int THEME_S4 = 3;
+	public static final int THEME_S5 = 4;
 	
 	/* Static */
 	private static int sTheme = THEME_UNKNOWN;
