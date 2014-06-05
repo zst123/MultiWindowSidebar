@@ -17,6 +17,10 @@ public class ThemeSetting {
 	public static final int[] BACKGROUND_RIGHT = { 0xA2,
 		R.drawable.bg_right,
 		R.drawable.inverted_bg_right };
+	public static final int[] TAB_SIDE_MARGIN = { 0xB0,
+		0,
+		0,
+	};
 	
 	public static final int[] TAB_LEFT_HIDDEN = { 0xB1,
 		R.drawable.tab_left_hidden_selector,

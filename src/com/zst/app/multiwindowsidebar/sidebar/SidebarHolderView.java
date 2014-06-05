@@ -187,12 +187,34 @@ public class SidebarHolderView extends LinearLayout {
 		if (mTabSize > 0) {
 			setTabSize(mTabSize);
 		}
+		refreshTabMargin(side);
 	}
 	
 	public void applySidebarWidth(int dp) {
 		ViewGroup.LayoutParams bar_param = mBarView.getLayoutParams();
 		mBarWidth = mService.mAppColumns * Util.dp(dp, mService);
 		bar_param.width = mBarWidth;
+		refreshTabMargin(mService.mBarOnRight);
+	}
+	
+	public void refreshTabMargin(boolean right_side) {
+		RelativeLayout.LayoutParams tab_param = (RelativeLayout.LayoutParams)
+				mTabView.getLayoutParams();
+		int unscaled_margin = ThemeSetting.getDrawableResId(ThemeSetting.TAB_SIDE_MARGIN);
+		if (unscaled_margin == 0 || mService.mAppColumns == 0) {
+			tab_param.leftMargin = 0;
+			tab_param.rightMargin = 0;
+		} else {;
+			int margin = unscaled_margin * mService.mAppColumns;
+			if (right_side) {
+				tab_param.rightMargin = Util.dp(margin, getContext());
+				tab_param.leftMargin = 0;
+			} else {
+				tab_param.leftMargin = Util.dp(margin, getContext());
+				tab_param.rightMargin = 0;
+			}
+		}
+		mTabView.setLayoutParams(tab_param);
 	}
 	
 	public void setTabSize(int dp) {
