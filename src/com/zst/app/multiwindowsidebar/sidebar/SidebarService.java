@@ -34,7 +34,7 @@ public class SidebarService extends Service {
 	private SharedPreferences main_prefs;
 	
 	// Preference Settings
-	public boolean mBarOnRight = true;
+	public Boolean mBarOnRight = null;
 	public int mAnimationTime;
 	public int mLabelSize;
 	public int mLabelColor;
@@ -82,7 +82,7 @@ public class SidebarService extends Service {
 		
 		boolean bar_on_right = Integer.parseInt(main_prefs.getString(Common.PREF_KEY_SIDEBAR_POSITION,
 				Common.PREF_DEF_SIDEBAR_POSITION)) == 1;
-		if (mBarOnRight != bar_on_right) {
+		if (mBarOnRight == null || bar_on_right != mBarOnRight) {
 			mBarOnRight = bar_on_right;
 			mHiddenSidebar.refreshBarSide();
 			mShownSidebar.refreshBarSide();
