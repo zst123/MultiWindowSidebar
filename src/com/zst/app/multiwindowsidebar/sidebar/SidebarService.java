@@ -74,7 +74,7 @@ public class SidebarService extends Service {
 	
 	// All the refreshable settings go here
 	@SuppressWarnings("deprecation")
-	private void refreshSettings(boolean fromUser) {
+	public void refreshSettings(boolean fromUser) {
 		SharedPreferences app_prefs = getSharedPreferences(Common.KEY_PREFERENCE_APPS, Context.MODE_PRIVATE);
 		if (main_prefs == null) {
 			main_prefs = getSharedPreferences(Common.KEY_PREFERENCE_MAIN, Context.MODE_PRIVATE);
@@ -138,8 +138,7 @@ public class SidebarService extends Service {
 		mShownSidebar.addApps(app_prefs, getPackageManager());
 		
 		if (fromUser) {
-			safelyRemoveView(mHiddenSidebar);
-			safelyRemoveView(mShownSidebar);
+			killBars();
 			hideBar();
 		}
 	}
@@ -174,8 +173,7 @@ public class SidebarService extends Service {
 			new Handler().postDelayed(new Runnable () {
 				@Override
 				public void run() {
-					safelyRemoveView(mHiddenSidebar);
-					safelyRemoveView(mShownSidebar);
+					killBars();
 					mHiddenSidebar = null;
 					mShownSidebar = null;
 				}
@@ -200,6 +198,15 @@ public class SidebarService extends Service {
 		} catch (Exception e) {
 			// so we dont crash
 		};
+	}
+	
+	public void changeSidebarPosition(boolean barOnRight) {
+		mBarOnRight = barOnRight;
+		main_prefs.edit()
+				.putString(Common.PREF_KEY_SIDEBAR_POSITION, barOnRight ? "1" : "0")
+				.commit();
+		mHiddenSidebar.refreshBarSide();
+		mShownSidebar.refreshBarSide();
 	}
 	
 	public void addView(View v) {
@@ -241,6 +248,11 @@ public class SidebarService extends Service {
 			mHiddenSidebar.setMarginFromTop(mMargin);
 		} catch (Exception e) {
 		}
+	}
+	
+	public void killBars() {
+		safelyRemoveView(mHiddenSidebar);
+		safelyRemoveView(mShownSidebar);
 	}
 	
 	private int mOldMargin = Common.PREF_DEF_SIDEBAR_MARGIN;

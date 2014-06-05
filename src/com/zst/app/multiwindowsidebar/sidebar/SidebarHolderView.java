@@ -7,6 +7,8 @@ import com.zst.app.multiwindowsidebar.Common;
 import com.zst.app.multiwindowsidebar.R;
 import com.zst.app.multiwindowsidebar.Util;
 
+import android.os.Handler;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +23,7 @@ import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -41,10 +44,14 @@ public class SidebarHolderView extends LinearLayout {
 	private ImageView mTabView;
 	private SidebarItemView[] mItemViews;
 	
+	private int mBarWidth = -1;
+	private int mTabMarginFromTop = -1;
+	private int mTabSize = -1;
 	
 	/* Values for transferring touch events */
 	private Rect mRect; // Used to check if the finger has moved outside of the sidebar rect
 	private boolean mTransferTouchEventsToSidebarItemView;
+	private boolean mLongClickTab;
 	
 	public SidebarHolderView(SidebarService service) {
 		super(service);
@@ -89,37 +96,57 @@ public class SidebarHolderView extends LinearLayout {
 	}
 	
 	public void refreshBarSide() {
-		View leftTab = findViewById(android.R.id.button1);
-		View rightTab = findViewById(android.R.id.button2);
-		if (mService.mBarOnRight) {
+		refreshBarSide(mService.mBarOnRight);
+	}
+	
+	public void refreshBarSide(boolean side) {
+		ImageView leftTab = (ImageView) findViewById(android.R.id.button1);
+		ImageView rightTab = (ImageView) findViewById(android.R.id.button2);
+		leftTab.setImageResource(ThemeSetting.getDrawableResId(ThemeSetting.TAB_RIGHT_SHOWN));
+		rightTab.setImageResource(ThemeSetting.getDrawableResId(ThemeSetting.TAB_LEFT_SHOWN));
+		
+		if (side) {
 			mBarView.setBackgroundResource(ThemeSetting.getDrawableResId(ThemeSetting.BACKGROUND_RIGHT));
 			rightTab.setVisibility(View.GONE);
 			leftTab.setVisibility(View.VISIBLE);
-			mTabView = (ImageView) leftTab;
-			mTabView.setImageResource(ThemeSetting.getDrawableResId(ThemeSetting.TAB_RIGHT_SHOWN));
+			mTabView = leftTab;
 		} else {
 			mBarView.setBackgroundResource(ThemeSetting.getDrawableResId(ThemeSetting.BACKGROUND_LEFT));
 			leftTab.setVisibility(View.GONE);
 			rightTab.setVisibility(View.VISIBLE);
-			mTabView = (ImageView) rightTab;
-			mTabView.setImageResource(ThemeSetting.getDrawableResId(ThemeSetting.TAB_LEFT_SHOWN));
+			mTabView = rightTab;
 		}
 		mTabView.setOnTouchListener(new View.OnTouchListener() {
 			float[] previous_touch = new float[2];
 			boolean click;
+			final Handler handler = new Handler();
+			final Runnable longClickRunnable = new Runnable() {
+				@Override
+				public void run() {
+					mLongClickTab = true;
+					click = false;
+					mContentView.setScaleX(0.95f);
+					mContentView.setScaleY(0.95f);
+				}
+			};
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 			switch (event.getActionMasked()) {
 			case MotionEvent.ACTION_MOVE:
 				if (moveRangeAboveLimit(event)) {
 					click = false;
+					handler.removeCallbacks(longClickRunnable);
 				}
 				break;
 			case MotionEvent.ACTION_DOWN:
 				mTabView.setImageState(new int[] { android.R.attr.state_pressed }, false);
+				if (!click && !mLongClickTab) {
+					handler.postDelayed(longClickRunnable, 700);
+				}
 				click = true;
 				break;
 			case MotionEvent.ACTION_UP:
+				handler.removeCallbacks(longClickRunnable);
 				if (click) {
 					click = false;
 					mService.hideBar();
@@ -128,7 +155,14 @@ public class SidebarHolderView extends LinearLayout {
 				mTabView.setImageState(new int[] { android.R.attr.state_empty }, false);
 				break;
 			}
-			mService.tabTouchEvent(event, true);	
+			if (!mLongClickTab) {
+				mService.tabTouchEvent(event, true);
+			} else {
+				if (onLongPressEvents(event)) {
+					mContentView.setScaleX(1f);
+					mContentView.setScaleY(1f);
+				}
+			}
 			return true;
 			}
 			
@@ -146,21 +180,31 @@ public class SidebarHolderView extends LinearLayout {
 				return returnVal;
 			}
 		});
+		
+		if (mTabMarginFromTop >= 0) {
+			setMarginFromTop(mTabMarginFromTop);
+		}
+		if (mTabSize > 0) {
+			setTabSize(mTabSize);
+		}
 	}
 	
 	public void applySidebarWidth(int dp) {
 		ViewGroup.LayoutParams bar_param = mBarView.getLayoutParams();
-		bar_param.width = mService.mAppColumns * Util.dp(dp, mService);
+		mBarWidth = mService.mAppColumns * Util.dp(dp, mService);
+		bar_param.width = mBarWidth;
 	}
 	
 	public void setTabSize(int dp) {
 		RelativeLayout.LayoutParams param = (RelativeLayout.LayoutParams)
 				mTabView.getLayoutParams();
+		mTabSize = dp;
 		param.width = Util.dp(dp, getContext());;
 		mTabView.setLayoutParams(param);
 	}
 	
 	public void setMarginFromTop(int top) {
+		mTabMarginFromTop = top;
 		mTabView.setPadding(0, top, 0, 0);
 	}
 	
@@ -392,5 +436,71 @@ public class SidebarHolderView extends LinearLayout {
 			e.printStackTrace();
 			return false;
 		}
+	}
+	
+	private float[] longPressEventLocation = new float[3];
+	private boolean longPressEventInit;
+	
+	private synchronized boolean onLongPressEvents(MotionEvent event) {
+		switch (event.getActionMasked()) {
+		case MotionEvent.ACTION_MOVE:
+			if (!longPressEventInit) {
+				longPressEventLocation[0] = 0.5f * getResources().getDisplayMetrics().widthPixels;
+				longPressEventLocation[1] = event.getRawY();
+				longPressEventLocation[2] = mService.mBarOnRight ? 1 : 2;
+				/* 0 = uninitialized
+				 * 1 = right
+				 * 2 = left */
+				longPressEventInit = true;
+				try {
+					WindowManager.LayoutParams param = (WindowManager.LayoutParams) getLayoutParams();
+					param.gravity = Gravity.LEFT | Gravity.TOP;
+					param.width = (int) (longPressEventLocation[0] * 3);
+					mService.mWindowManager.updateViewLayout(this, param);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			
+			int leftFromScreen = Math.round(event.getRawX());
+			int topFromScreen = Math.round(event.getRawY() - longPressEventLocation[1]);
+			
+			if (leftFromScreen > longPressEventLocation[0]) {
+				longPressEventLocation[2] = 1;
+				refreshBarSide(true);
+			} else {
+				longPressEventLocation[2] = 2;
+				refreshBarSide(false);
+			}
+			
+			FrameLayout.LayoutParams param = (FrameLayout.LayoutParams) mContentView.getLayoutParams();
+			if (longPressEventLocation[2] == 2 /* bar on left*/) {
+				param.leftMargin = leftFromScreen - mBarWidth;
+			} else {
+				param.leftMargin = leftFromScreen - mTabView.getWidth();
+			}
+			param.topMargin = topFromScreen;
+			param.height = getMeasuredHeight();
+			param.gravity = Gravity.LEFT | Gravity.TOP;
+			break;
+		case MotionEvent.ACTION_UP:
+			FrameLayout.LayoutParams param1 = (FrameLayout.LayoutParams) mContentView.getLayoutParams();
+			param1.leftMargin = 0;
+			param1.topMargin = 0;
+			param1.height = LinearLayout.LayoutParams.MATCH_PARENT;
+			
+			if (longPressEventLocation[2] != 0) {
+				boolean barOnRight = longPressEventLocation[2] == 1;
+				mService.changeSidebarPosition(barOnRight);
+				mService.killBars();
+				mService.addView(this);
+			}
+			
+			longPressEventLocation = new float[3];
+			longPressEventInit = false;
+			mLongClickTab = false;
+			return true;
+		}
+		return false;
 	}
 }
