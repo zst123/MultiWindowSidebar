@@ -57,8 +57,7 @@ public class SidebarService extends Service {
 			// Non-refreshable settings
 			main_prefs = getSharedPreferences(Common.KEY_PREFERENCE_MAIN,
 					Context.MODE_PRIVATE);
-			ThemeSetting.setTheme(Integer.parseInt(main_prefs.getString(
-					Common.PREF_KEY_SIDEBAR_THEME, Common.PREF_DEF_SIDEBAR_THEME)));
+			refreshTheme();
 			
 			mMargin = main_prefs.getInt(Common.PREF_KEY_SIDEBAR_MARGIN, Common.PREF_DEF_SIDEBAR_MARGIN);
 			
@@ -143,6 +142,21 @@ public class SidebarService extends Service {
 		mShownSidebar.addApps(app_prefs, getPackageManager());
 	}
 	
+	public void refreshTheme() {
+		ThemeSetting.setTheme(Integer.parseInt(main_prefs.getString(
+				Common.PREF_KEY_SIDEBAR_THEME, Common.PREF_DEF_SIDEBAR_THEME)));
+		
+		if (mHiddenSidebar != null) {
+			mHiddenSidebar.refreshBarSide();
+		}
+		
+		if (mShownSidebar != null) {
+			mShownSidebar.refreshBarSide();
+			mShownSidebar.refreshTabMargin(mBarOnRight);
+			mShownSidebar.refreshMenuButtonIcons();
+		}
+	}
+	
 	@Override
 	public IBinder onBind(Intent intent) {
 		return null;
@@ -152,6 +166,9 @@ public class SidebarService extends Service {
 		super.onStartCommand(intent, flags, startId);
 		if (intent != null && intent.getBooleanExtra(Common.EXTRA_REFRESH_SERVICE, false)) {
 			refreshSettings();
+		}
+		if (intent != null && intent.getBooleanExtra(Common.EXTRA_REFRESH_THEME, false)) {
+			refreshTheme();
 		}
 		return START_STICKY;
 	}

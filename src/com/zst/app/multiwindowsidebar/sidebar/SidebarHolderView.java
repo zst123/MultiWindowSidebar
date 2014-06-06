@@ -44,6 +44,12 @@ public class SidebarHolderView extends LinearLayout {
 	private ImageView mTabView;
 	private SidebarItemView[] mItemViews;
 	
+	/* Menu Buttons */
+	private final ImageView mMenuButtonMore;
+	private final ImageView mMenuButtonCreate;
+	private final ImageView mMenuButtonEdit;
+	
+	
 	private int mBarWidth = -1;
 	private int mTabMarginFromTop = -1;
 	private int mTabSize = -1;
@@ -64,9 +70,9 @@ public class SidebarHolderView extends LinearLayout {
 		mHolderView = (LinearLayout) findViewById(R.id.scroll_view_holder);
 
 		final LinearLayout settings_menu = (LinearLayout) findViewById(R.id.ll_settings_menu);
-		final ImageView iv_more_button = (ImageView) findViewById(R.id.more_button);
-		final ImageView iv_create_group = (ImageView) findViewById(R.id.iv_create_group);
-		final ImageView iv_edit = (ImageView) findViewById(R.id.iv_edit);
+		mMenuButtonMore = (ImageView) findViewById(R.id.more_button);
+		mMenuButtonCreate = (ImageView) findViewById(R.id.iv_create_group);
+		mMenuButtonEdit = (ImageView) findViewById(R.id.iv_edit);
 		final View.OnClickListener menu_listener = new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -85,14 +91,17 @@ public class SidebarHolderView extends LinearLayout {
 			}
 		};
 		settings_menu.setVisibility(View.GONE);
-		iv_more_button.setOnClickListener(menu_listener);
-		iv_create_group.setOnClickListener(menu_listener);
-		iv_edit.setOnClickListener(menu_listener);
+		mMenuButtonMore.setOnClickListener(menu_listener);
+		mMenuButtonCreate.setOnClickListener(menu_listener);
+		mMenuButtonEdit.setOnClickListener(menu_listener);
 		
-		iv_more_button.setImageResource(ThemeSetting.getDrawableResId(ThemeSetting.IC_MORE_BUTTON));
-		iv_create_group.setImageResource(ThemeSetting.getDrawableResId(ThemeSetting.IC_MENU_CREATE_GROUP));
-		iv_edit.setImageResource(ThemeSetting.getDrawableResId(ThemeSetting.IC_MENU_EDIT));
-		
+		refreshMenuButtonIcons();
+	}
+	
+	public void refreshMenuButtonIcons() {
+		mMenuButtonMore.setImageResource(ThemeSetting.getDrawableResId(ThemeSetting.IC_MORE_BUTTON));
+		mMenuButtonCreate.setImageResource(ThemeSetting.getDrawableResId(ThemeSetting.IC_MENU_CREATE_GROUP));
+		mMenuButtonEdit.setImageResource(ThemeSetting.getDrawableResId(ThemeSetting.IC_MENU_EDIT));
 	}
 	
 	public void refreshBarSide() {

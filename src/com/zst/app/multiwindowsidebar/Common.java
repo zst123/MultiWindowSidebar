@@ -12,6 +12,7 @@ public class Common {
 	public static final int FLAG_XMULTIWINDOW_DOWNVIEW = 0x002;
 	public static final String EXTRA_XHALO_SNAP_SIDE = PKG_XHALOFLOATINGWINDOW + ".EXTRA_SNAP_SIDE";
 	public static final String EXTRA_REFRESH_SERVICE = "refresh_service";
+	public static final String EXTRA_REFRESH_THEME = "refresh_theme";
 	
 	// Sidebar
 	public static final int TIMEOUT_HIDE_SIDEBAR = 4000;

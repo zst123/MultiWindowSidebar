@@ -53,6 +53,14 @@ public class Util {
 		}
 	}
 	
+	public static void refreshTheme(final Context ctx) {
+		if (SidebarService.isRunning || SidebarService.isSidebarShown) {
+			final Intent service = new Intent(ctx, SidebarService.class);
+			service.putExtra(Common.EXTRA_REFRESH_THEME, true);
+			ctx.startService(service);
+		}
+	}
+	
 	public static void resetService(final Context ctx) {
 		if (!SidebarService.isRunning) return;
 		final Intent service = SidebarService.stopSidebar(ctx);

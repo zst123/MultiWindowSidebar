@@ -16,8 +16,16 @@ public class AppearencePrefFragment extends PreferenceFragment {
 		getPreferenceManager().setSharedPreferencesName(Common.KEY_PREFERENCE_MAIN);
 		addPreferencesFromResource(R.xml.appearence_pref);
 		
+		findPreference(Common.PREF_KEY_SIDEBAR_THEME).setOnPreferenceChangeListener(
+				new OnPreferenceChangeListener() {
+			@Override
+			public boolean onPreferenceChange(Preference preference, Object newValue) {
+				Util.refreshTheme(getActivity());
+				return true;
+			}
+		});
+		
 		// Reset Change Listener
-		findPreference(Common.PREF_KEY_SIDEBAR_THEME).setOnPreferenceChangeListener(sResetChangeListener);
 		findPreference(Common.PREF_KEY_ANIM_TIME).setOnPreferenceChangeListener(sResetChangeListener);
 		
 		// Refresh Change Listener
