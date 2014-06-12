@@ -1,57 +1,83 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Main -->
     <string name="app_name">MultiWindowSidebar</string>
-    
-    <!-- Generic Strings -->
+    <string name="app_name_toggle">Alternar MultiWindowSidebar</string>
+    <string name="app_name_running">MultiWindowSidebar está funcionando</string>
     <string name="left">Esquerda</string>
     <string name="right">Direita</string>
     <string name="add_app">Adicionar</string>
     <string name="group">Grupo</string>
     <string name="settings_default">Padrão</string>
-    
-    <!-- Creating Group -->
+    <string name="apply">Aplicar</string>
+    <string name="color_hex">Color Hex</string>
     <string name="create_group">Criar Grupo</string>
-    <string name="create_group_done">O grupo foi criado</string>
+    <string name="create_group_done">Grupo criado</string>
     <string name="create_group_empty1">A primeira aplicação não pode ficar em branco.</string>
     <string name="create_group_empty2">A segunda aplicação não pode ficar em branco.</string>
     <string name="create_group_warning">Nota: Grupos funcionarão corretamente apenas com XHaloFloatingWindow ou XMultiWindow.</string>
     <string name="create_group_from_service">Os aplicativos foram detectados automaticamente. Por favor, confirme antes de salver.</string>
-    <string name="create_group_first">Escolha o primeiro aplicativo\n(abre no alto ou na esquerda)</string>
-    <string name="create_group_second">Escolha o segundo aplicativo\n(abre embaixo ou na direita)</string>
-    
-    <!-- Preference / Main -->
+    <string name="create_group_first">"Escolha o primeiro aplicativo
+(abre no alto ou na esquerda)"</string>
+    <string name="create_group_second">Escolha o segundo aplicativo
+(abre embaixo ou na direita)"</string>  
     <string name="pref_main_header">Principal</string>
-    <string name="pref_toggle_service_title">Alterar estado</string>
-    <string name="pref_toggle_service_summary"> Habilitar ou desabilitar a barra lateral</string>
+    <string name="pref_toggle_service_title">Alternar estado</string>
+    <string name="pref_toggle_service_summary"> Habilitar ou desabilitar a sidebar</string>
     <string name="pref_start_on_boot_title">Habilitar no boot</string>
-    <string name="pref_start_on_boot_summary">Mostrar a barra lateral automaticamente após a inicialização do aparelho</string>
-    
-    <string name="pref_launch_mode_title">Modo de inicio dos aplicativos</string>
-    <string name="pref_launch_mode_summary">Escolha como os aplicativos selecionados serão iniciados</string>
-    <string name="pref_launch_mode_normally">Padrão (Início normal)</string>
+    <string name="pref_start_on_boot_summary">Mostrar a sidebar automaticamente após a inicialização do sistema</string>
+    <string name="pref_keep_app_bg_title">Manter serviço em segundo plano</string>
+    <string name="pref_keep_app_bg_summary">Usar uma notificação para previnir o fechamento do serviço pelo sistema (em situações de pouca memória)</string>  
+    <string name="pref_launch_mode_title">Modo de início dos aplicativos</string>
+    <string name="pref_drag_launch_mode_title">Arrastar</string>
+    <string name="pref_drag_launch_mode_summary">Modo de início ao arrastar os aplicativos da barra para a tela</string>
+    <string name="pref_tap_launch_mode_title">Clicar</string>
+    <string name="pref_tap_launch_mode_summary">Modo de início ao clicar nos ícones na barra.</string>
+    <string name="pref_launch_mode_normally">Padrão (Normal)</string>
     <string name="pref_launch_mode_pa_halo">ParanoidAndroid Halo</string>
-    <string name="pref_launch_mode_xhfw">XHaloFloatingWindow</string>
+    <string name="pref_launch_mode_xhfw">XHaloFloatingWindow (Retrato)</string>
+    <string name="pref_launch_mode_xhfw_l">XHaloFloatingWindow (Paisagem)</string>
+    <string name="pref_launch_mode_xhfw_center">XHaloFloatingWindow (Centro)</string>
+    <string name="pref_launch_mode_xhfw_top">XHaloFloatingWindow (No Alto)</string>
+    <string name="pref_launch_mode_xhfw_bottom">XHaloFloatingWindow (Embaixo)</string>
+    <string name="pref_launch_mode_xhfw_left">XHaloFloatingWindow (Esquerda)</string>
+    <string name="pref_launch_mode_xhfw_right">XHaloFloatingWindow (Direita)</string>
+    <string name="pref_launch_mode_xmw_top">XMultiWindow (No Alto)</string>
+    <string name="pref_launch_mode_xmw_bottom">XMultiWindow (Embaixo)</string>
     <string name="pref_launch_mode_xmw">XMultiWindow</string>
-    <string name="pref_launch_mode_error_xhfw">Aparentemente o XHaloFloatingWindow não está instalado.\nEste modo não funcionará.</string>
-    <string name="pref_launch_mode_error_xmw">Aparentemente o XMultiWindow não está instalado.\nEste modo não funcionará.</string>
-    
+    <string name="pref_launch_mode_error_xhfw">"Parece que o XHaloFloatingWindow não está instalado.
+Este modo não funcionará."</string>
+    <string name="pref_launch_mode_error_xmw">"Parece que o XMultiWindow não está instalado.
+Este modo não funcionará."</string>  
     <string name="pref_select_app_title">Selecionar os aplicativos</string>
-    <string name="pref_select_app_summary">Escolha os aplicativos que irão aparecer na barra lateral</string>
-    
-    <!-- Preference / Appearence -->
+    <string name="pref_select_app_summary">Escolha os aplicativos que irão aparecer na sidebar</string>    <!-- Preference / Appearence -->
     <string name="pref_appearance_header">Aparência</string>
-    <string name="pref_sidebar_position_title">Posição da barra lateral</string>
+    <string name="pref_sidebar_position_title">Posição da sidebar</string>
     <string name="pref_sidebar_position_summary">Escolha a posição em que a barra irá aparecer</string>
+    <string name="pref_sidebar_theme_title">Tema</string>
+    <string name="pref_sidebar_theme_summary">Selecione a aparência da sidebar</string>
+    <string name="pref_tab_alpha_hidden_title">Transparência</string>
+    <string name="pref_tab_alpha_hidden_summary">Transparência do indicador (seta) quando a barra estiver escondida</string>
     <string name="pref_tab_size_title">Largura da Barra</string>
-    <string name="pref_tab_size_summary">Largura da barra lateral, em dp</string>
+    <string name="pref_tab_size_summary">Largura da sidebar (dp)</string>
     <string name="pref_label_size_title">Tamanho dos títulos</string>
-    <string name="pref_label_size_summary">Tamanho da fonte dos títulos dos aplicativos, em sp</string>
+    <string name="pref_label_size_summary">Tamanho da fonte dos títulos dos aplicativos (sp)</string>
+    <string name="pref_label_color_title">Cor do título</string>
+    <string name="pref_label_color_summary">Cor do título dos aplicativos</string>
+    <string name="pref_column_number_title">Número de colunas</string>
+    <string name="pref_column_number_summary">Número de colunas para cada linha na barra</string>
     <string name="pref_animation_time_title">Velocidade da animação</string>
-    <string name="pref_animation_time_summary">Velocidade de animação da barra lateral</string>
-    
-    <!-- Service -->
-    <string name="app_list_empty">A lista está vazia.\nPor favor, selecione os aplicativos nas configurações.</string>
-    <string name="app_launch_error">Houve um problema ao iniciar o aplicativo:\n</string>
-    
+    <string name="pref_animation_time_summary">Velocidade de animação da sidebar</string>   
+    <string name="app_list_empty">"Lista vazia.
+Por favor, selecione os aplicativos nas configurações."</string>
+    <string name="app_launch_error">"Houve um problema ao iniciar o aplicativo:
+"</string>
+    <string name="theme_default">"Padrão (Original Note 3)
+por Samsung"</string>
+    <string name="theme_inverted">"Note 3 Invertido
+por foreverloco@XDA"</string>
+    <string name="theme_s4">"Galaxy S4
+por Samsung"</string>
+    <string name="theme_s5">"Galaxy S5
+por Samsung"</string>
+    <string name="arrow_symbol">➙</string>
 </resources>
