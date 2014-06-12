@@ -32,7 +32,7 @@
     <string name="pref_drag_launch_mode_summary">Modo de início ao arrastar os aplicativos da barra para a tela</string>
     <string name="pref_tap_launch_mode_title">Clicar</string>
     <string name="pref_tap_launch_mode_summary">Modo de início ao clicar nos ícones na barra.</string>
-    <string name="pref_launch_mode_normally">Padrão (Normal)</string>
+    <string name="pref_launch_mode_normally">Normal</string>
     <string name="pref_launch_mode_pa_halo">ParanoidAndroid Halo</string>
     <string name="pref_launch_mode_xhfw">XHaloFloatingWindow (Retrato)</string>
     <string name="pref_launch_mode_xhfw_l">XHaloFloatingWindow (Paisagem)</string>
@@ -49,7 +49,7 @@ Este modo não funcionará."</string>
     <string name="pref_launch_mode_error_xmw">"Parece que o XMultiWindow não está instalado.
 Este modo não funcionará."</string>  
     <string name="pref_select_app_title">Selecionar os aplicativos</string>
-    <string name="pref_select_app_summary">Escolha os aplicativos que irão aparecer na sidebar</string>    <!-- Preference / Appearence -->
+    <string name="pref_select_app_summary">Escolha os aplicativos que irão aparecer na sidebar</string>
     <string name="pref_appearance_header">Aparência</string>
     <string name="pref_sidebar_position_title">Posição da sidebar</string>
     <string name="pref_sidebar_position_summary">Escolha a posição em que a barra irá aparecer</string>
