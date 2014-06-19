@@ -2,7 +2,7 @@
 <resources>
     <!-- Main -->
     <string name="app_name">MultiWindowSidebar</string>
-    <string name="app_name_toggle">Запуск/остановка MultiWindowSidebar</string>
+    <string name="app_name_toggle">MultiWindowSidebar Запуск/остановка</string>
     <string name="app_name_running">MultiWindowSidebar запущен</string>
     
     <!-- Generic Strings -->
@@ -84,6 +84,8 @@
     <!-- Themes -->
     <string name="theme_default">По умолчанию (Note 3)\nот Samsung</string>
     <string name="theme_inverted">Инвертированная Note 3\nот foreverloco@XDA</string>
+    <string name="theme_s4">Galaxy S4\nот Samsung</string>
+    <string name="theme_s5">Galaxy S5\nот Samsung</string>
 
     <!-- Do not translate -->
     <string name="arrow_symbol">➙</string>
