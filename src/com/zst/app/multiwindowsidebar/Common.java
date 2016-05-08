@@ -4,10 +4,12 @@ public class Common {
 	// Package Names
 	public static final String PKG_XMULTIWINDOW = "com.lovewuchin.xposed.xmultiwindow";
 	public static final String PKG_XHALOFLOATINGWINDOW = "com.zst.xposed.halo.floatingwindow";
+	public static final String PKG_XHFW3 = "com.zst.xposed.halo.floatingwindow3";
 	public static final String PKG_THIS = Common.class.getPackage().getName();
 	
 	// Intent Launching
 	public static final int FLAG_FLOATING_WINDOW = 0x00002000;
+	public static final int FLAG_FLOATING_WINDOW_XHFW3 = 0x00002001;
 	public static final int FLAG_XMULTIWINDOW_UPVIEW = 0x001;
 	public static final int FLAG_XMULTIWINDOW_DOWNVIEW = 0x002;
 	public static final String EXTRA_XHALO_SNAP_SIDE = PKG_XHALOFLOATINGWINDOW + ".EXTRA_SNAP_SIDE";

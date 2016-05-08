@@ -49,10 +49,20 @@
     <string name="pref_launch_mode_xhfw_bottom">XHaloFloatingWindow (Bottom)</string>
     <string name="pref_launch_mode_xhfw_left">XHaloFloatingWindow (Left)</string>
     <string name="pref_launch_mode_xhfw_right">XHaloFloatingWindow (Right)</string>
+
+    <string name="pref_launch_mode_xhfw3_p">XHaloFloatingWindow3 (Portrait)</string>
+    <string name="pref_launch_mode_xhfw3_l">XHaloFloatingWindow3 (Landscape)</string>
+    <string name="pref_launch_mode_xhfw3_center">XHaloFloatingWindow3 (Center)</string>
+    <string name="pref_launch_mode_xhfw3_top">XHaloFloatingWindow3 (Top)</string>
+    <string name="pref_launch_mode_xhfw3_bottom">XHaloFloatingWindow3 (Bottom)</string>
+    <string name="pref_launch_mode_xhfw3_left">XHaloFloatingWindow3 (Left)</string>
+    <string name="pref_launch_mode_xhfw3_right">XHaloFloatingWindow3 (Right)</string>
+
     <string name="pref_launch_mode_xmw_top">XMultiWindow (Top)</string>
     <string name="pref_launch_mode_xmw_bottom">XMultiWindow (Bottom)</string>
     <string name="pref_launch_mode_xmw">XMultiWindow</string>
     <string name="pref_launch_mode_error_xhfw">XHaloFloatingWindow does not appear to be installed.\nThis launch mode will not work without it.</string>
+    <string name="pref_launch_mode_error_xhfw3">XHaloFloatingWindow3 does not appear to be installed.\nThis launch mode will not work without it.</string>
     <string name="pref_launch_mode_error_xmw">XMultiWindow does not appear to be installed.\nThis launch mode will not work without it.</string>
     
     <string name="pref_select_app_title">Select Apps</string>
