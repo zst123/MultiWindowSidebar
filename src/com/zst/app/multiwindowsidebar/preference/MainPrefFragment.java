@@ -58,6 +58,13 @@ public class MainPrefFragment extends PreferenceFragment implements OnPreference
 						Util.dialog(getActivity(), R.string.pref_launch_mode_error_xhfw);
 					}
 					break;
+				case IntentUtil.DragMode.XHFW3_PORTRAIT:
+				case IntentUtil.DragMode.XHFW3_LANDSCAPE:
+					if (!Util.isAppInstalled(getActivity().getPackageManager(),
+							Common.PKG_XHFW3)) {
+						Util.dialog(getActivity(), R.string.pref_launch_mode_error_xhfw3);
+					}
+					break;
 				case IntentUtil.DragMode.XMULTI_WINDOW:
 					if (!Util.isAppInstalled(getActivity().getPackageManager(),
 							Common.PKG_XMULTIWINDOW)) {
@@ -79,6 +86,16 @@ public class MainPrefFragment extends PreferenceFragment implements OnPreference
 					if (!Util.isAppInstalled(getActivity().getPackageManager(),
 							Common.PKG_XHALOFLOATINGWINDOW)) {
 						Util.dialog(getActivity(), R.string.pref_launch_mode_error_xhfw);
+					}
+					break;
+				case IntentUtil.TapMode.XHFW3_TOP:
+				case IntentUtil.TapMode.XHFW3_BOTTOM:
+				case IntentUtil.TapMode.XHFW3_LEFT:
+				case IntentUtil.TapMode.XHFW3_RIGHT:
+				case IntentUtil.TapMode.XHFW3_CENTER:
+					if (!Util.isAppInstalled(getActivity().getPackageManager(),
+							Common.PKG_XHFW3)) {
+						Util.dialog(getActivity(), R.string.pref_launch_mode_error_xhfw3);
 					}
 					break;
 				case IntentUtil.TapMode.XMULTI_WINDOW_TOP:
